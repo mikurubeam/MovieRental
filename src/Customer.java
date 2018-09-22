@@ -37,7 +37,7 @@ public class Customer {
     
     public void generateStatement() {
         this.statement = new Statement(this);
-        this.statement.addMovieSummary(Movie.getMovies(this.rentals));
+        this.statement.addRentalSummary(this.rentals);
         this.statement.addStatementFooter();
     }
 
@@ -48,6 +48,7 @@ public class Customer {
         bob.addRental(new ChildrensMovie("Bambi", 10));
         bob.addRental(new NewRelease("Avengers", 10));
         bob.addRental(new RegularMovie("Titanic", 10));
+        bob.addRental(new Game());
         bob.generateStatement();
 
         sue.addRental(new ChildrensMovie("Pinocchio", 2));

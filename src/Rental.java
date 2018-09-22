@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Rental {
@@ -19,5 +20,17 @@ public abstract class Rental {
 
     protected abstract int getPaidRentalDays();
 
+    public abstract String getTableHeader();
 
+    public static <T> List<Rental> getFilteredList(List<Rental> rentals, Class<T> objectType) {
+        List<Rental> list = new ArrayList<>();
+
+        for (Rental rental : rentals) {
+            if (objectType.isInstance(rental)) {
+                list.add(rental);
+            }
+        }
+
+        return list;
+    }
 }

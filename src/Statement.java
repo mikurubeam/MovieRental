@@ -14,13 +14,28 @@ public class Statement {
         this.statementBuilder.append(String.format("Rental Record for %s:\n", customer.getName()));
     }
 
-    public void addMovieSummary(List<Movie> movies) {
-        this.statementBuilder.append(Movie.getStatementHeader());
-        for (Movie movie : movies) {
-            this.totalAmount += movie.getRentalPrice();
-            this.frequentRenterPoints += movie.getBonusPoints();
-            this.statementBuilder.append(movie);
+    public void addRentalSummary(List<Rental> rentals) {
+        this.addSummaryByType(rentals, Movie.class);
+        this.addSummaryByType(rentals, Game.class);
+    }
+
+    private <T> void addSummaryByType(List<Rental> rentals, Class<T> objectType) {
+        List<Rental> filteredList = Rental.getFilteredList(rentals, objectType);
+
+        if (filteredList.isEmpty()) {
+            return;
         }
+
+        // Summary header by type
+        this.statementBuilder.append(filteredList.get(0).getTableHeader());
+
+        // Itemized list of rentals by type
+        for (Rental rental : filteredList) {
+            this.totalAmount += rental.getRentalPrice();
+            this.frequentRenterPoints += rental.getBonusPoints();
+            this.statementBuilder.append(rental);
+        }
+
         this.statementBuilder.append("\n");
     }
 
