@@ -13,9 +13,4 @@ public class NewRelease extends Movie {
 
         return this.bonusPoints;
     }
-
-    @Override
-    public double getRentalPrice() {
-        return this.pricePerDay * this.daysRented;
-    }
 }

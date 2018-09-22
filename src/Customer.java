@@ -9,16 +9,12 @@ public class Customer {
     
     public Customer (String name) {
         this.name = name;
-        this.rentals = new ArrayList<Rental>();
+        this.rentals = new ArrayList<>();
         this.frequentRenterPoints = 0;
     }
 
     public Customer (String name, int frequentRenterPoints) {
         this(name);
-        this.frequentRenterPoints = frequentRenterPoints;
-    }
-
-    public void setfrequentRenterPoints(int frequentRenterPoints) {
         this.frequentRenterPoints = frequentRenterPoints;
     }
 
@@ -28,10 +24,6 @@ public class Customer {
 
     public void addRental(Rental rental) {
         this.rentals.add(rental);
-    }
-    
-    public String getName() {
-        return this.name;
     }
 
     public String getStatement() {

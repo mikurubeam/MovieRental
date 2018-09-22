@@ -11,14 +11,6 @@ public class Movie extends Rental{
         this.movieType = movieType;
     }
 
-    public String getTitle() {
-        return this.title;
-    }
-
-    public int getMovieTypeId() {
-        return this.movieType;
-    }
-
     public Category getMovieType() {
         return Category.values()[this.movieType];
     }
