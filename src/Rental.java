@@ -1,17 +1,23 @@
-public class Rental {
-    private Movie _movie;
-    private int   _daysRented;
-    
-    public Rental(Movie movie, int daysRented) {
-        _movie      = movie;
-        _daysRented = daysRented;
+import java.util.List;
+
+public abstract class Rental {
+    protected int daysRented;
+    protected int freeRentalDays;
+    protected double basePrice;
+    protected double pricePerDay;
+    protected int bonusPoints;
+
+    protected Rental() {
+        this.bonusPoints = 1;
     }
-    
-    public int getDaysRented() {
-        return _daysRented;
+
+    public int getBonusPoints() {
+        return bonusPoints;
     }
-    
-    public Movie getMovie() {
-        return _movie;
-    }
+
+    public abstract double getRentalPrice();
+
+    protected abstract int getPaidRentalDays();
+
+
 }
