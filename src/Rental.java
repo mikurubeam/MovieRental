@@ -1,17 +1,58 @@
-public class Rental {
-    private Movie _movie;
-    private int   _daysRented;
-    
-    public Rental(Movie movie, int daysRented) {
-        _movie      = movie;
-        _daysRented = daysRented;
+public abstract class Rental {
+    protected int daysRented;
+    protected int freeRentalDays;
+    protected double basePrice;
+    protected double pricePerDay;
+    protected int bonusPoints;
+
+    protected Rental() {
+        this.bonusPoints = 1;
     }
-    
+
     public int getDaysRented() {
-        return _daysRented;
+        return daysRented;
     }
-    
-    public Movie getMovie() {
-        return _movie;
+
+    public void setDaysRented(int daysRented) {
+        this.daysRented = daysRented;
     }
+
+    public int getFreeRentalDays() {
+        return freeRentalDays;
+    }
+
+    protected void setFreeRentalDays(int freeRentalDays) {
+        this.freeRentalDays = freeRentalDays;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    protected void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public double getPricePerDay() {
+        return pricePerDay;
+    }
+
+    protected void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public int getBonusPoints() {
+        return bonusPoints;
+    }
+
+    public void setBonusPoints(int bonusPoints) {
+        this.bonusPoints = bonusPoints;
+    }
+
+
+    public abstract double getRentalPrice();
+
+    protected abstract int getPaidRentalDays();
+
+
 }
