@@ -1,7 +1,10 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Rental {
+public abstract class Rental implements XmlElement{
     protected int daysRented;
     protected int freeRentalDays;
     protected double basePrice;
@@ -21,6 +24,10 @@ public abstract class Rental {
     protected abstract int getPaidRentalDays();
 
     public abstract String getTableHeader();
+
+    public abstract Element getXmlList(Document doc);
+
+//    public abstract Element getXmlElement(Document doc);
 
     public static <T> List<Rental> getFilteredList(List<Rental> rentals, Class<T> objectType) {
         List<Rental> list = new ArrayList<>();

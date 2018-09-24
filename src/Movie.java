@@ -1,3 +1,6 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 public abstract class Movie extends Rental {
     enum Category {REGULAR, NEW_RELEASE, CHILDRENS};
 
@@ -32,6 +35,21 @@ public abstract class Movie extends Rental {
                 "DAYS RENTED",
                 "PRICE"
             );
+    }
+
+    public Element getXmlList(Document doc) {
+        return doc.createElement("movies");
+    }
+
+    public Element getXmlElement(Document doc) {
+        Element movie = doc.createElement("movie");
+
+        XmlUtils.addChild(doc, movie, "title", this.title);
+        XmlUtils.addChild(doc, movie, "category", this.getMovieType().toString());
+        XmlUtils.addChild(doc, movie, "daysRented", String.valueOf(this.daysRented));
+        XmlUtils.addChild(doc, movie, "price", String.format(StringUtil.USD, this.getRentalPrice()));
+
+        return movie;
     }
 
     @Override

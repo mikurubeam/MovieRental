@@ -1,17 +1,18 @@
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer {
+public class Customer implements XmlElement{
     private String name;
     private List<Rental> rentals;
     private int frequentRenterPoints;
-    private Statement statement;
-    
+
     public Customer (String name) {
         this.name = name;
         this.rentals = new ArrayList<>();
         this.frequentRenterPoints = 0;
-        this.statement = null;
     }
 
     public Customer (String name, int frequentRenterPoints) {
@@ -27,18 +28,26 @@ public class Customer {
         this.rentals.add(rental);
     }
 
+    public List<Rental> getRentals() {
+        return this.rentals;
+    }
+
     public int getFrequentRenterPoints() {
         return this.frequentRenterPoints;
     }
 
-    public String getStatement() {
-        return this.statement.toString();
-    }
-    
-    public void generateStatement() {
-        this.statement = new Statement(this);
-        this.statement.addRentalSummary(this.rentals);
-        this.statement.addStatementFooter();
+    public Element getXmlElement(Document doc) {
+        Element customer = doc.createElement("customer");
+
+        XmlUtils.addChild(doc, customer, "name", this.name);
+
+        Element frequentRenterPoints = doc.createElement("frequentRenterPoints");
+
+        XmlUtils.addChild(doc, frequentRenterPoints, "current", String.valueOf(this.frequentRenterPoints));
+
+        customer.appendChild(frequentRenterPoints);
+
+        return customer;
     }
 
     public static void main(String[] args) {
@@ -49,14 +58,27 @@ public class Customer {
         bob.addRental(new NewRelease("Avengers", 10));
         bob.addRental(new RegularMovie("Titanic", 10));
         bob.addRental(new Game());
-        bob.generateStatement();
+
+        Statement bobStatementText = new TextStatement(bob);
+        Statement bobStatementXml = new XmlStatement(bob);
+
+        bobStatementText.generateStatement();
+        bobStatementXml.generateStatement();
+
+        System.out.println(bobStatementText);
+        System.out.println(bobStatementXml);
 
         sue.addRental(new ChildrensMovie("Pinocchio", 2));
         sue.addRental(new NewRelease("Avengers", 2));
         sue.addRental(new RegularMovie("Superman", 2));
-        sue.generateStatement();
 
-        System.out.println(bob.getStatement());
-        System.out.println(sue.getStatement());
+        Statement sueStatementText = new TextStatement(sue);
+        Statement sueStatementXml = new XmlStatement(sue);
+
+        sueStatementText.generateStatement();
+        sueStatementXml.generateStatement();
+
+        System.out.println(sueStatementText);
+        System.out.println(sueStatementXml);
     }
 }

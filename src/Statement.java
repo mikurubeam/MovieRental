@@ -1,58 +1,32 @@
 import java.util.List;
 
-public class Statement {
-    private double totalAmount;
-    private int frequentRenterPoints;
-    private StringBuilder statementBuilder;
+public abstract class Statement {
+    protected Customer customer;
+    protected double totalAmount;
+    protected int frequentRenterPoints;
 
-    public Statement(Customer customer) {
+    protected Statement(Customer customer) {
+        this.customer = customer;
         this.totalAmount = 0;
-        this.statementBuilder = new StringBuilder();
-
-        // Initialize Customer specific values
-        this.frequentRenterPoints = customer.getFrequentRenterPoints();
-        this.statementBuilder.append(String.format("Rental Record for %s:\n", customer.getName()));
+        this.frequentRenterPoints = 0;
     }
 
-    public void addRentalSummary(List<Rental> rentals) {
-        this.addSummaryByType(rentals, Movie.class);
-        this.addSummaryByType(rentals, Game.class);
+    protected int getTotalFrequentRenterPoints() {
+        return this.frequentRenterPoints + this.customer.getFrequentRenterPoints();
     }
 
-    private <T> void addSummaryByType(List<Rental> rentals, Class<T> objectType) {
-        List<Rental> filteredList = Rental.getFilteredList(rentals, objectType);
+    public void generateStatement() {
+        this.addStatementHeaderData();
 
-        if (filteredList.isEmpty()) {
-            return;
-        }
+        this.addRentalSummaryByType(Rental.getFilteredList(this.customer.getRentals(), Movie.class));
+        this.addRentalSummaryByType(Rental.getFilteredList(this.customer.getRentals(), Game.class));
 
-        // Summary header by type
-        this.statementBuilder.append(filteredList.get(0).getTableHeader());
-
-        // Itemized list of rentals by type
-        for (Rental rental : filteredList) {
-            this.totalAmount += rental.getRentalPrice();
-            this.frequentRenterPoints += rental.getBonusPoints();
-            this.statementBuilder.append(rental);
-        }
-
-        this.statementBuilder.append("\n");
+        this.addStatementFooterData();
     }
 
-    public void addStatementFooter() {
-        this.statementBuilder.append("\t");
-        this.statementBuilder.append(StringUtil.padLeft("Amount owed is:", 45));
-        this.statementBuilder.append(
-                StringUtil.padLeft(String.format(StringUtil.USD, this.totalAmount), StringUtil.LEFT_PAD)
-        );
-        this.statementBuilder.append(
-                String.format("\n\nYou earned %d frequent renter points!\n", frequentRenterPoints)
-        );
-        this.statementBuilder.append(String.format("Total frequent renter points: %d\n", this.frequentRenterPoints));
-    }
+    protected abstract void addStatementHeaderData();
 
-    @Override
-    public String toString() {
-        return this.statementBuilder.toString();
-    }
+    protected abstract void addRentalSummaryByType(List<Rental> rentals);
+
+    protected abstract void addStatementFooterData();
 }
