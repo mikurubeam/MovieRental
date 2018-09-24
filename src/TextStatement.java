@@ -1,5 +1,3 @@
-import org.w3c.dom.Element;
-
 import java.util.List;
 
 public class TextStatement extends Statement {

@@ -27,8 +27,6 @@ public abstract class Rental implements XmlElement{
 
     public abstract Element getXmlList(Document doc);
 
-//    public abstract Element getXmlElement(Document doc);
-
     public static <T> List<Rental> getFilteredList(List<Rental> rentals, Class<T> objectType) {
         List<Rental> list = new ArrayList<>();
 

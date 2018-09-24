@@ -55,7 +55,6 @@ public class XmlStatement extends Statement{
         );
 
         XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "totalPrice", String.valueOf(this.totalAmount));
-
     }
 
     @Override
