@@ -25,7 +25,7 @@ public class TextStatement extends Statement {
         // Itemized list of rentals by type
         for (Rental rental : rentals) {
             this.totalAmount += rental.getRentalPrice();
-            this.frequentRenterPoints += rental.getBonusPoints();
+            this.frequentRenterPoints += rental.getFrequentRentalPoints();
             this.statementBuilder.append(rental);
         }
 

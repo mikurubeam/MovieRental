@@ -1,7 +1,7 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public abstract class Movie extends Rental {
+public class Movie extends Rental {
     enum Category {REGULAR, NEW_RELEASE, CHILDRENS};
 
     private String title;
@@ -17,14 +17,6 @@ public abstract class Movie extends Rental {
         return Category.values()[this.movieType];
     }
 
-    public double getRentalPrice() {
-        return this.basePrice + (this.pricePerDay * this.getPaidRentalDays());
-    }
-
-    protected int getPaidRentalDays() {
-        return Math.max(0, this.daysRented - this.freeRentalDays);
-    }
-
     public String getTableHeader() {
         return "Movie Rental Summary:\n" +
             StringUtil.getTableRow(
@@ -33,7 +25,8 @@ public abstract class Movie extends Rental {
                 "TITLE",
                 "CATEGORY",
                 "DAYS RENTED",
-                "PRICE"
+                "PRICE",
+                "POINTS"
             );
     }
 
@@ -48,6 +41,7 @@ public abstract class Movie extends Rental {
         XmlUtils.addChild(doc, movie, "category", this.getMovieType().toString());
         XmlUtils.addChild(doc, movie, "daysRented", String.valueOf(this.daysRented));
         XmlUtils.addChild(doc, movie, "price", String.format(StringUtil.USD, this.getRentalPrice()));
+        XmlUtils.addChild(doc, movie, "points", String.valueOf(this.getFrequentRentalPoints()));
 
         return movie;
     }
@@ -60,7 +54,8 @@ public abstract class Movie extends Rental {
             this.title,
             this.getMovieType().toString(),
             String.valueOf(this.daysRented),
-            String.format(StringUtil.USD, this.getRentalPrice())
+            String.format(StringUtil.USD, this.getRentalPrice()),
+            String.valueOf(this.getFrequentRentalPoints())
         );
     }
 }

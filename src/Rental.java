@@ -4,24 +4,47 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Rental implements XmlElement{
+public abstract class Rental implements XmlElement {
     protected int daysRented;
-    protected int freeRentalDays;
-    protected double basePrice;
-    protected double pricePerDay;
-    protected int bonusPoints;
+    private Customer customer;
+    private PriceStrategy priceStrategy;
+    private FrequentRenterPointStrategy frequentRenterPointStrategy;
 
-    protected Rental() {
-        this.bonusPoints = 1;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getBonusPoints() {
-        return bonusPoints;
+    public Customer getCustomer() {
+        return this.customer;
     }
 
-    public abstract double getRentalPrice();
+    public int getFrequentRentalPoints() {
+        if (this.frequentRenterPointStrategy == null) {
+            this.frequentRenterPointStrategy = FrequentRenterPointStrategyFactory.getFrequentRentalPointStrategy(this);
+        }
 
-    protected abstract int getPaidRentalDays();
+        return this.frequentRenterPointStrategy.getFrequentRentalPoints();
+    }
+
+    public void setDaysRented(int daysRented) {
+        this.daysRented = daysRented;
+    }
+
+    public int getDaysRented() {
+        return this.daysRented;
+    }
+
+    public double getRentalPrice() {
+        if (this.priceStrategy == null) {
+            this.priceStrategy = PriceStrategyFactory.getPriceStrategy(this);
+        }
+
+        return this.priceStrategy.getPrice();
+    }
+
+    public boolean isFirstRental() {
+        return this.customer.getRentals().indexOf(this) == 0;
+    }
 
     public abstract String getTableHeader();
 

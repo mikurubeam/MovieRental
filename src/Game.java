@@ -12,13 +12,18 @@ public class Game extends Rental {
         this.systemType = Category.GENERIC.ordinal();
     }
 
+    public Game(String title, int gameType) {
+        this.title = "Some Game";
+        this.systemType = gameType;
+    }
+
     public Category getGameSystem() {
         return Category.values()[this.systemType];
     }
 
-    public double getRentalPrice() {
-        return 0;
-    }
+//    public double getRentalPrice() {
+//        return 0;
+//    }
 
     protected int getPaidRentalDays() {
         return 0;
@@ -32,7 +37,8 @@ public class Game extends Rental {
                 "TITLE",
                 "SYSTEM",
                 "DAYS RENTED",
-                "PRICE"
+                "PRICE",
+                "POINTS"
             );
     }
 
@@ -47,6 +53,7 @@ public class Game extends Rental {
         XmlUtils.addChild(doc, game, "gameSystem", this.getGameSystem().toString());
         XmlUtils.addChild(doc, game, "daysRented", String.valueOf(this.daysRented));
         XmlUtils.addChild(doc, game, "price", String.format(StringUtil.USD, this.getRentalPrice()));
+        XmlUtils.addChild(doc, game, "points", String.valueOf(this.getFrequentRentalPoints()));
 
         return game;
     }
@@ -59,7 +66,8 @@ public class Game extends Rental {
                 this.title,
                 this.getGameSystem().toString(),
                 String.valueOf(this.daysRented),
-                String.format(StringUtil.USD, this.getRentalPrice())
+                String.format(StringUtil.USD, this.getRentalPrice()),
+                String.valueOf(this.getFrequentRentalPoints())
         );
     }
 }
