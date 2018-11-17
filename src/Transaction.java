@@ -1,7 +1,7 @@
 import java.util.List;
 
 interface Transaction {
-    List<Rental> getRentals();
+    List<Item> getRentals();
 
     void setDaysRented(int daysRented);
 

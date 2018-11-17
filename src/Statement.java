@@ -15,8 +15,8 @@ public abstract class Statement extends TransactionDecorator implements Printabl
     }
 
     public void addStatementBody() {
-        this.addRentalSummaryByType(Rental.getFilteredList(this.getRentals(), Movie.class));
-        this.addRentalSummaryByType(Rental.getFilteredList(this.getRentals(), Game.class));
+        this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Movie.class));
+        this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Game.class));
     }
 
     public Statement getDiscountStatement(Transaction transaction) {

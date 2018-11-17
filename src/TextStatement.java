@@ -12,21 +12,21 @@ public class TextStatement extends Statement {
 
     @Override
     public void addStatementHeader() {
-        this.statementBuilder.append(String.format("Rental Record for %s:\n", this.customer.getName()));
+        this.statementBuilder.append(String.format("Item Record for %s:\n", this.customer.getName()));
     }
 
     @Override
-    public void addRentalSummaryByType(List<Rental> rentals) {
-        if (rentals.isEmpty()) {
+    public void addRentalSummaryByType(List<Item> items) {
+        if (items.isEmpty()) {
             return;
         }
 
         // Summary header by type
-        this.statementBuilder.append(rentals.get(0).getTableHeader());
+        this.statementBuilder.append(items.get(0).getTableHeader());
 
-        // Itemized list of rentals by type
-        for (Rental rental : rentals) {
-            this.statementBuilder.append(rental);
+        // Itemized list of items by type
+        for (Item item : items) {
+            this.statementBuilder.append(item);
         }
 
         this.statementBuilder.append("\n");

@@ -1,17 +1,17 @@
 public class FrequentRenterPointStrategyFactory {
-    public static FrequentRenterPointStrategy getFrequentRentalPointStrategy(Rental rental) {
-        FrequentRenterPointStrategy strategy = new StandardFrequentRenterPointStrategy(rental);
+    public static FrequentRenterPointStrategy getFrequentRentalPointStrategy(Item item) {
+        FrequentRenterPointStrategy strategy = new StandardFrequentRenterPointStrategy(item);
 
-        if (rental instanceof Movie) {
+        if (item instanceof Movie) {
             strategy = new MultipleCategoryFrequentRenterPointStrategy(strategy);
             strategy = new AgeRangeFrequentRenterPointStrategy(strategy);
 
-            if (((Movie)rental).getMovieType() == Movie.Category.NEW_RELEASE) {
+            if (((Movie) item).getMovieType() == Movie.Category.NEW_RELEASE) {
                 strategy =  new NewReleaseFrequentRenterPointStrategy(strategy);
             }
         }
 
-        if (rental.isFirstRental()) {
+        if (item.isFirstRental()) {
             strategy = new FreeRentalFrequentRenterPointStrategy(strategy);
         }
 

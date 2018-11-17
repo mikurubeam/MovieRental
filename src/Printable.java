@@ -12,7 +12,7 @@ public interface Printable {
 
     void addStatementBody();
 
-    void addRentalSummaryByType(List<Rental> rentals);
+    void addRentalSummaryByType(List<Item> items);
 
     void addStatementFooter();
 }

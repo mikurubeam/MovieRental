@@ -4,7 +4,7 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Rental implements XmlElement, Comparable<Rental> {
+public abstract class Item implements XmlElement, Comparable<Item> {
     protected int daysRented;
     private Transaction transaction;
 
@@ -55,12 +55,12 @@ public abstract class Rental implements XmlElement, Comparable<Rental> {
 
     public abstract String getTitle();
 
-    public static <T> List<Rental> getFilteredList(List<Rental> rentals, Class<T> objectType) {
-        List<Rental> list = new ArrayList<>();
+    public static <T> List<Item> getFilteredList(List<Item> items, Class<T> objectType) {
+        List<Item> list = new ArrayList<>();
 
-        for (Rental rental : rentals) {
-            if (objectType.isInstance(rental)) {
-                list.add(rental);
+        for (Item item : items) {
+            if (objectType.isInstance(item)) {
+                list.add(item);
             }
         }
 
@@ -68,7 +68,7 @@ public abstract class Rental implements XmlElement, Comparable<Rental> {
     }
 
     @Override
-    public int compareTo(Rental other) {
+    public int compareTo(Item other) {
         return Double.compare(other.getRentalPrice(false), this.getRentalPrice(false));
     }
 }

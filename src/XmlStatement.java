@@ -19,18 +19,18 @@ public class XmlStatement extends Statement{
     }
 
     @Override
-    public void addRentalSummaryByType(List<Rental> rentals) {
-        if (rentals.isEmpty()) {
+    public void addRentalSummaryByType(List<Item> items) {
+        if (items.isEmpty()) {
             return;
         }
 
         // Create XML list by type
-        Element typeList = rentals.get(0).getXmlList(this.xmlDocument);
+        Element typeList = items.get(0).getXmlList(this.xmlDocument);
         this.xmlRoot.appendChild(typeList);
 
-        // Itemized list of rentals by type
-        for (Rental rental : rentals) {
-            typeList.appendChild(rental.getXmlElement(this.xmlDocument));
+        // Itemized list of items by type
+        for (Item item : items) {
+            typeList.appendChild(item.getXmlElement(this.xmlDocument));
         }
     }
 

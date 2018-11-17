@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f885df1f-c3c1-482f-8317-1fc109c84a77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChildrensMoviePriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChildrensMoviePriceStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FirstRentalFrequentRenterPointStrategy.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrequentRenterPointStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GamePriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePriceStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MoviePriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoviePriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewReleaseFrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewReleaseFrequentRenterPointStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewReleaseMoviePriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewReleaseMoviePriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PriceStrategyDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PriceStrategyDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PriceStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PriceStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rental.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RentalDecorator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RentalFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RentalFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StandardFrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardFrequentRenterPointStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StandardPriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardPriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StandardTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandardTransaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Statement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/XmlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XmlStatement.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,48 +46,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="313" />
+          <entry key="java" value="315" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="313" />
+          <entry key="JAVA" value="315" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="34" />
+          <entry key="dummy" value="38" />
           <entry key="java" value="30777" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="30777" />
-          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="PLAIN_TEXT" value="38" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FiftyPercentDiscountTransaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FreeRentalFrequentRenterPointStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FreeRentalPriceStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#234#235#0" expanded="true" />
                 <element signature="e#274#275#0" expanded="true" />
@@ -114,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -141,26 +136,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Rental.java">
+        <entry file="file://$PROJECT_DIR$/src/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state relative-caret-position="210">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#417#418#0" expanded="true" />
                 <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
                 <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#1864#1865#0" expanded="true" />
+                <element signature="e#1958#1959#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Transaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XmlStatement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
-              <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,7 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/XmlUtils.java" />
         <option value="$PROJECT_DIR$/src/XmlElement.java" />
         <option value="$PROJECT_DIR$/src/NewRelease.java" />
         <option value="$PROJECT_DIR$/src/ChildrensMovie.java" />
@@ -269,6 +285,7 @@
         <option value="$PROJECT_DIR$/src/Customer.java" />
         <option value="$PROJECT_DIR$/src/Rental.java" />
         <option value="$PROJECT_DIR$/src/XmlStatement.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
       </list>
     </option>
   </component>
@@ -303,7 +320,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542493310830" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542493521985" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -366,7 +383,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24248926" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="0" sideWeight="0.49785408" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" weight="0.32168674" />
@@ -374,7 +391,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32771084" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49785408" visible="true" weight="0.40963855" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49785408" visible="true" weight="0.40963855" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -491,7 +508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RentalDecorator.java">
+    <entry file="file://$PROJECT_DIR$/src/ItemDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
@@ -668,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TextStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -718,16 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FiftyPercentDiscountTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -759,7 +759,7 @@
     <entry file="file://$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#234#235#0" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
@@ -774,7 +774,7 @@
     <entry file="file://$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -795,24 +795,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rental.java">
+    <entry file="file://$PROJECT_DIR$/src/XmlStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        <state relative-caret-position="291">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XmlStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="210">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

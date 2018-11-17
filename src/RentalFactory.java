@@ -19,7 +19,7 @@ public class RentalFactory {
     }
 
 //    public static Movie getFreeRental(String title, int daysRented, Movie.Category movieCategory, Transaction transaction) {
-//        Movie movie = getRental(title, daysRented, movieCategory, transaction);
+//        Movie movie = getItem(title, daysRented, movieCategory, transaction);
 //        movie.setFreeRental(true);
 //
 //        return movie;
@@ -45,7 +45,7 @@ public class RentalFactory {
     }
 
 //    public static Game getFreeRental(String title, int daysRented, Game.Category gameCategory, Transaction transaction) {
-//        Game game = getRental(title, daysRented, gameCategory, transaction);
+//        Game game = getItem(title, daysRented, gameCategory, transaction);
 //        game.setFreeRental(true);
 //
 //        return game;

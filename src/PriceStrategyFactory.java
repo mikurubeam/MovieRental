@@ -1,26 +1,26 @@
 public class PriceStrategyFactory {
-    public static PriceStrategy getPriceStrategy(Rental rental) {
-        return getPriceStrategy(rental, true);
+    public static PriceStrategy getPriceStrategy(Item item) {
+        return getPriceStrategy(item, true);
     }
 
-    public static PriceStrategy getPriceStrategy(Rental rental, boolean willApplyDiscounts) {
-        PriceStrategy strategy = new StandardPriceStrategy(rental);
+    public static PriceStrategy getPriceStrategy(Item item, boolean willApplyDiscounts) {
+        PriceStrategy strategy = new StandardPriceStrategy(item);
 
-        if (rental instanceof Movie) {
-            Movie.Category movieType = ((Movie)rental).getMovieType();
+        if (item instanceof Movie) {
+            Movie.Category movieType = ((Movie) item).getMovieType();
             if (movieType == Movie.Category.REGULAR) {
-                strategy =  new MoviePriceStrategy(rental);
+                strategy =  new MoviePriceStrategy(item);
             } else if (movieType == Movie.Category.CHILDRENS) {
-                strategy =  new ChildrensMoviePriceStrategy(rental);
+                strategy =  new ChildrensMoviePriceStrategy(item);
             } else if (movieType == Movie.Category.NEW_RELEASE) {
-                strategy =  new NewReleaseMoviePriceStrategy(rental);
+                strategy =  new NewReleaseMoviePriceStrategy(item);
             }
-        } else if (rental instanceof Game) {
-            strategy =  new GamePriceStrategy(rental);
+        } else if (item instanceof Game) {
+            strategy =  new GamePriceStrategy(item);
         }
 
         if (willApplyDiscounts) {
-            if (rental.isFirstRental()) {
+            if (item.isFirstRental()) {
                 strategy = new FreeRentalPriceStrategy(strategy);
             }
         }

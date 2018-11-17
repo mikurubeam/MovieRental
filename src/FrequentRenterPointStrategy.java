@@ -1,6 +1,6 @@
 public interface FrequentRenterPointStrategy {
     int getFrequentRentalPoints();
-    Rental getRental();
+    Item getItem();
     Customer getCustomer();
     Transaction getTransaction();
 }

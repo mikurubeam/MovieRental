@@ -4,7 +4,7 @@ public class StandardTransaction implements Transaction {
     private Customer customer;
     private Statement statement;
     private int daysRented;
-    private Map<String, Rental> rentals;
+    private Map<String, Item> rentals;
 
     public StandardTransaction(Customer customer) {
         this.customer = customer;
@@ -14,8 +14,8 @@ public class StandardTransaction implements Transaction {
 
     public List<Movie.Category> getRentedMovieCategories() {
         Map<Movie.Category, Integer> movieTypes = new HashMap<>();
-        for (Rental rental : Rental.getFilteredList(this.getRentals(), Movie.class)) {
-            movieTypes.put(((Movie)rental).getMovieType(), 1);
+        for (Item item : Item.getFilteredList(this.getRentals(), Movie.class)) {
+            movieTypes.put(((Movie) item).getMovieType(), 1);
         }
 
         return new ArrayList<>(movieTypes.keySet());
@@ -29,8 +29,8 @@ public class StandardTransaction implements Transaction {
     }
 
     public boolean hasNewReleases() {
-        for (Rental rental : Rental.getFilteredList(this.getRentals(), Movie.class)) {
-            if (((Movie)rental).getMovieType() == Movie.Category.NEW_RELEASE) {
+        for (Item item : Item.getFilteredList(this.getRentals(), Movie.class)) {
+            if (((Movie) item).getMovieType() == Movie.Category.NEW_RELEASE) {
                 return true;
             }
         }
@@ -39,11 +39,11 @@ public class StandardTransaction implements Transaction {
     }
 
     @Override
-    public List<Rental> getRentals() {
-        List<Rental> rentals = new ArrayList<>(this.rentals.values());
-        Collections.sort(rentals);
+    public List<Item> getRentals() {
+        List<Item> items = new ArrayList<>(this.rentals.values());
+        Collections.sort(items);
 
-        return rentals;
+        return items;
     }
 
     public void setDaysRented(int daysRented) {
@@ -74,8 +74,8 @@ public class StandardTransaction implements Transaction {
 
     public double getTotalPrice() {
         double total = 0;
-        for (Rental rental : rentals.values()) {
-            total += rental.getRentalPrice();
+        for (Item item : rentals.values()) {
+            total += item.getRentalPrice();
         }
 
         return total;
@@ -83,9 +83,9 @@ public class StandardTransaction implements Transaction {
 
     public int getEarnedFrequentRenterPoints() {
         int points = 0;
-        for (Rental rental : rentals.values()) {
-            if (rental.getFrequentRentalPoints() > 0) {
-                points += rental.getFrequentRentalPoints();
+        for (Item item : rentals.values()) {
+            if (item.getFrequentRentalPoints() > 0) {
+                points += item.getFrequentRentalPoints();
             }
         }
 

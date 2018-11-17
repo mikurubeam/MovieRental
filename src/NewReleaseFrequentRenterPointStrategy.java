@@ -7,7 +7,7 @@ public class NewReleaseFrequentRenterPointStrategy extends FrequentRenterPointSt
     public int getFrequentRentalPoints() {
         int points = super.getFrequentRentalPoints();
 
-        if (this.getRental().getDaysRented() > 1) {
+        if (this.getItem().getDaysRented() > 1) {
             points += 1;
         }
 

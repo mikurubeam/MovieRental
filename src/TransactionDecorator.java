@@ -8,7 +8,7 @@ public class TransactionDecorator implements Transaction {
     }
 
     @Override
-    public List<Rental> getRentals() {
+    public List<Item> getRentals() {
         return this.transaction.getRentals();
     }
 

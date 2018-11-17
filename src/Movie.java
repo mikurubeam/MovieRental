@@ -1,7 +1,7 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Movie extends Rental {
+public class Movie extends Item {
     enum Category {REGULAR, NEW_RELEASE, CHILDRENS}
 
     private String title;
@@ -18,7 +18,7 @@ public class Movie extends Rental {
     }
 
     public String getTableHeader() {
-        return "Movie Rental Summary:\n" +
+        return "Movie Item Summary:\n" +
             StringUtil.getTableRow(
                 1,
                 2,

@@ -1,6 +1,6 @@
 public class NewReleaseMoviePriceStrategy extends StandardPriceStrategy {
-    public NewReleaseMoviePriceStrategy(Rental rental) {
-        super(rental);
+    public NewReleaseMoviePriceStrategy(Item item) {
+        super(item);
         this.pricePerDay = 3;
     }
 }

@@ -1,5 +1,5 @@
 public interface PriceStrategy {
     double getPrice();
-    Rental getRental();
+    Item getItem();
     Customer getCustomer();
 }

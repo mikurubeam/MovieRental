@@ -11,8 +11,8 @@ public class PriceStrategyDecorator implements PriceStrategy {
     }
 
     @Override
-    public Rental getRental() {
-        return this.strategy.getRental();
+    public Item getItem() {
+        return this.strategy.getItem();
     }
 
     @Override

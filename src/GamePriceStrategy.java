@@ -1,6 +1,6 @@
 public class GamePriceStrategy extends StandardPriceStrategy {
-    public GamePriceStrategy(Rental rental) {
-        super(rental);
+    public GamePriceStrategy(Item item) {
+        super(item);
     }
 
     @Override

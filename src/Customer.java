@@ -96,10 +96,10 @@ public class Customer implements XmlElement {
 
 
 
-//        RentalFactory.getRental("Bambi", 10, Movie.Category.CHILDRENS, bob);
-//        RentalFactory.getRental("Avengers", 10, Movie.Category.NEW_RELEASE, bob);
-//        RentalFactory.getRental("Titanic", 10, Movie.Category.REGULAR, bob);
-//        RentalFactory.getRental("Doom", 10, Game.Category.GENERIC, bob);
+//        RentalFactory.getItem("Bambi", 10, Movie.Category.CHILDRENS, bob);
+//        RentalFactory.getItem("Avengers", 10, Movie.Category.NEW_RELEASE, bob);
+//        RentalFactory.getItem("Titanic", 10, Movie.Category.REGULAR, bob);
+//        RentalFactory.getItem("Doom", 10, Game.Category.GENERIC, bob);
 //
 //        Collections.sort(bob.getRentals());
 //
@@ -112,9 +112,9 @@ public class Customer implements XmlElement {
 //        System.out.println(bobStatementText);
 //        System.out.println(bobStatementXml);
 
-//        RentalFactory.getRental("Avengers", 2, Movie.Category.NEW_RELEASE, sue);
-//        RentalFactory.getRental("Pinocchio", 2, Movie.Category.CHILDRENS, sue);
-//        RentalFactory.getRental("Superman", 2, Movie.Category.REGULAR, sue);
+//        RentalFactory.getItem("Avengers", 2, Movie.Category.NEW_RELEASE, sue);
+//        RentalFactory.getItem("Pinocchio", 2, Movie.Category.CHILDRENS, sue);
+//        RentalFactory.getItem("Superman", 2, Movie.Category.REGULAR, sue);
 //        RentalFactory.getFreeRental("Coco", 2, Movie.Category.CHILDRENS, sue);
 //
 //        Collections.sort(sue.getRentals());

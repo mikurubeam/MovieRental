@@ -1,7 +1,7 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class Game extends Rental {
+public class Game extends Item {
     enum Category {GENERIC, XBOX, PLAYSTATION, NINTENDO}
 
     private String title;
@@ -30,7 +30,7 @@ public class Game extends Rental {
     }
 
     public String getTableHeader() {
-        return "Game Rental Summary:\n" +
+        return "Game Item Summary:\n" +
             StringUtil.getTableRow(
                 1,
                 2,

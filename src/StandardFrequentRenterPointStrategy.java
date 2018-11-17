@@ -1,22 +1,22 @@
 public class StandardFrequentRenterPointStrategy implements FrequentRenterPointStrategy{
     protected int bonusPoints;
-    protected Rental rental;
+    protected Item item;
     protected Customer customer;
     protected Transaction transaction;
 
-    public StandardFrequentRenterPointStrategy(Rental rental) {
+    public StandardFrequentRenterPointStrategy(Item item) {
         this.bonusPoints = 1;
-        this.rental = rental;
-        this.customer = rental.getCustomer();
-        this.transaction = rental.getTransaction();
+        this.item = item;
+        this.customer = item.getCustomer();
+        this.transaction = item.getTransaction();
     }
 
     public int getFrequentRentalPoints() {
         return this.bonusPoints;
     }
 
-    public Rental getRental() {
-        return this.rental;
+    public Item getItem() {
+        return this.item;
     }
 
     public Customer getCustomer() {
