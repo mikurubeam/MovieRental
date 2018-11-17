@@ -4,22 +4,22 @@ import org.w3c.dom.Element;
 import java.util.List;
 
 public class XmlStatement extends Statement{
-    private Element xmlRoot;
-    private Document xmlDocument;
+    private final Element xmlRoot;
+    private final Document xmlDocument;
 
-    public XmlStatement(Transaction transaction) {
-        super(transaction);
+    public XmlStatement(Transaction Transaction) {
+        super(Transaction);
         this.xmlRoot = XmlUtils.getDocumentRoot("statement");
         this.xmlDocument = this.xmlRoot.getOwnerDocument();
     }
 
     @Override
-    protected void addStatementHeaderData() {
+    public void addStatementHeader() {
         this.xmlRoot.appendChild(this.customer.getXmlElement(xmlDocument));
     }
 
     @Override
-    protected void addRentalSummaryByType(List<Rental> rentals) {
+    public void addRentalSummaryByType(List<Rental> rentals) {
         if (rentals.isEmpty()) {
             return;
         }
@@ -30,18 +30,12 @@ public class XmlStatement extends Statement{
 
         // Itemized list of rentals by type
         for (Rental rental : rentals) {
-//            if (rental.isFreeRental()) {
-//                continue;
-//            }
-//            this.totalAmount += rental.getRentalPrice();
-//            this.getEarnedFrequentRenterPoints() += rental.getFrequentRentalPoints();
-
             typeList.appendChild(rental.getXmlElement(this.xmlDocument));
         }
     }
 
     @Override
-    protected void addStatementFooterData() {
+    public void addStatementFooter() {
         // Add footer data to xml document
         Element frequentRenterPoints =
                 (Element)this.xmlDocument.getElementsByTagName("frequentRenterPointsEarned").item(0);
@@ -69,7 +63,16 @@ public class XmlStatement extends Statement{
                 String.valueOf(this.getTotalFrequentRenterPoints())
         );
 
-        XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "subtotal", String.valueOf(this.totalAmount));
+        if (this.transaction instanceof PercentDiscountTransaction) {
+            XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "subtotal", String.valueOf(this.getSubtotal()));
+            XmlUtils.addChild(
+                    this.xmlDocument,
+                    this.xmlRoot,
+                    "discount",
+                    this.transaction.toString()
+            );
+        }
+        XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "total", String.valueOf(this.getTotalPrice()));
     }
 
     @Override

@@ -2,7 +2,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Movie extends Rental {
-    enum Category {REGULAR, NEW_RELEASE, CHILDRENS};
+    enum Category {REGULAR, NEW_RELEASE, CHILDRENS}
 
     private String title;
     private int movieType;

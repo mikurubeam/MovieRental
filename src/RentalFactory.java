@@ -10,16 +10,16 @@ public class RentalFactory {
         return movie;
     }
 
-    public static Movie getRental(String title, int daysRented, Movie.Category movieCategory, Customer customer) {
+    public static Movie getRental(String title, int daysRented, Movie.Category movieCategory, Transaction transaction) {
         Movie movie = getRental(title, daysRented, movieCategory);
-        movie.setCustomer(customer);
-        customer.addRental(movie);
+        movie.setTransaction(transaction);
+//        transaction.addRental(movie);
 
         return movie;
     }
 
-//    public static Movie getFreeRental(String title, int daysRented, Movie.Category movieCategory, Customer customer) {
-//        Movie movie = getRental(title, daysRented, movieCategory, customer);
+//    public static Movie getFreeRental(String title, int daysRented, Movie.Category movieCategory, Transaction transaction) {
+//        Movie movie = getRental(title, daysRented, movieCategory, transaction);
 //        movie.setFreeRental(true);
 //
 //        return movie;
@@ -36,16 +36,16 @@ public class RentalFactory {
         return game;
     }
 
-    public static Game getRental(String title, int daysRented, Game.Category gameCategory, Customer customer) {
+    public static Game getRental(String title, int daysRented, Game.Category gameCategory, Transaction transaction) {
         Game game = getRental(title, daysRented, gameCategory);
         game.setDaysRented(daysRented);
-        game.setCustomer(customer);
-        customer.addRental(game);
+        game.setTransaction(transaction);
+//        transaction.addRental(game);
         return game;
     }
 
-//    public static Game getFreeRental(String title, int daysRented, Game.Category gameCategory, Customer customer) {
-//        Game game = getRental(title, daysRented, gameCategory, customer);
+//    public static Game getFreeRental(String title, int daysRented, Game.Category gameCategory, Transaction transaction) {
+//        Game game = getRental(title, daysRented, gameCategory, transaction);
 //        game.setFreeRental(true);
 //
 //        return game;

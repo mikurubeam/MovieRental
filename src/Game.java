@@ -2,7 +2,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class Game extends Rental {
-    enum Category {GENERIC, XBOX, PLAYSTATION, NINTENDO};
+    enum Category {GENERIC, XBOX, PLAYSTATION, NINTENDO}
 
     private String title;
     private int systemType;

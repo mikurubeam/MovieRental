@@ -6,12 +6,10 @@ import java.util.*;
 public class Customer implements XmlElement {
     private String name;
     private int age;
-    private List<Rental> rentals;
     private int frequentRenterPoints;
 
     public Customer(String name) {
         this.name = name;
-        this.rentals = new ArrayList<>();
         this.frequentRenterPoints = 0;
     }
 
@@ -36,14 +34,6 @@ public class Customer implements XmlElement {
         return this.age;
     }
 
-    public void addRental(Rental rental) {
-        this.rentals.add(rental);
-    }
-
-    public List<Rental> getRentals() {
-        return this.rentals;
-    }
-
     public int getFrequentRenterPoints() {
         return this.frequentRenterPoints;
     }
@@ -66,33 +56,6 @@ public class Customer implements XmlElement {
         return customer;
     }
 
-    public List<Movie.Category> getRentedMovieCategories() {
-        Map<Movie.Category, Integer> movieTypes = new HashMap<>();
-        for (Rental rental : Rental.getFilteredList(this.rentals, Movie.class)) {
-            movieTypes.put(((Movie)rental).getMovieType(), 1);
-        }
-
-        return new ArrayList<>(movieTypes.keySet());
-    }
-
-    public boolean hasMultipleMovieCategories() {
-        return this.hasMultipleMovieCategories(1);
-    }
-
-    public boolean hasMultipleMovieCategories(int min) {
-        return this.getRentedMovieCategories().size() > min;
-    }
-
-    public boolean hasNewReleases() {
-        for (Rental rental : Rental.getFilteredList(this.rentals, Movie.class)) {
-            if (((Movie)rental).getMovieType() == Movie.Category.NEW_RELEASE) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public boolean isInAgeRange(int min, int max) {
         return this.age >= min && this.age <= max;
     }
@@ -103,8 +66,8 @@ public class Customer implements XmlElement {
         Customer sue = new Customer("sue", 5);
         sue.setAge(35);
 
-        // First Transaction
-        Transaction bobTxn = new Transaction(bob);
+        // First StandardTransaction
+        StandardTransaction bobTxn = new StandardTransaction(bob);
         bobTxn.setDaysRented(10);
 
         bobTxn.addRental("Bambi", Movie.Category.CHILDRENS);
@@ -116,8 +79,8 @@ public class Customer implements XmlElement {
 //        bobTxn.printStatementAsXML();
         bobTxn.completeTransaction();
 
-        // New transaction
-        bobTxn = new Transaction(bob);
+        // New standardTransaction
+        bobTxn = new StandardTransaction(bob);
         bobTxn.setDaysRented(5);
 
         bobTxn.addRental("Coco", Movie.Category.NEW_RELEASE);
@@ -125,6 +88,7 @@ public class Customer implements XmlElement {
         bobTxn.addRental("Superman", Movie.Category.REGULAR);
         bobTxn.addRental("Black Panther", Movie.Category.NEW_RELEASE);
         bobTxn.addRental("Incredibles 2", Movie.Category.NEW_RELEASE);
+        bobTxn.addRental("Titanic", Movie.Category.REGULAR);
 
 //        bobTxn.printStatementAsText();
 //        bobTxn.printStatementAsXML();

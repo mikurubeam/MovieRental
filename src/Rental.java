@@ -6,22 +6,25 @@ import java.util.List;
 
 public abstract class Rental implements XmlElement, Comparable<Rental> {
     protected int daysRented;
-    private Customer customer;
-    private PriceStrategy priceStrategy;
-    private FrequentRenterPointStrategy frequentRenterPointStrategy;
+    private Transaction transaction;
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
+    }
+
+    public Transaction getTransaction() {
+        return this.transaction;
     }
 
     public Customer getCustomer() {
-        return this.customer;
+        return this.transaction.getCustomer();
     }
 
     public int getFrequentRentalPoints() {
-        this.frequentRenterPointStrategy = FrequentRenterPointStrategyFactory.getFrequentRentalPointStrategy(this);
+        FrequentRenterPointStrategy frequentRenterPointStrategy =
+                FrequentRenterPointStrategyFactory.getFrequentRentalPointStrategy(this);
 
-        return this.frequentRenterPointStrategy.getFrequentRentalPoints();
+        return frequentRenterPointStrategy.getFrequentRentalPoints();
     }
 
     public void setDaysRented(int daysRented) {
@@ -37,13 +40,13 @@ public abstract class Rental implements XmlElement, Comparable<Rental> {
     }
 
     public double getRentalPrice(boolean willApplyDiscounts) {
-        this.priceStrategy = PriceStrategyFactory.getPriceStrategy(this, willApplyDiscounts);
+        PriceStrategy priceStrategy = PriceStrategyFactory.getPriceStrategy(this, willApplyDiscounts);
 
-        return this.priceStrategy.getPrice();
+        return priceStrategy.getPrice();
     }
 
     public boolean isFirstRental() {
-        return this.customer.getRentals().indexOf(this) == 0;
+        return this.transaction.getRentals().indexOf(this) == 0;
     }
 
     public abstract String getTableHeader();

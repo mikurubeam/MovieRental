@@ -1,11 +1,9 @@
 public class FrequentRenterPointStrategyDecorator implements FrequentRenterPointStrategy {
     protected FrequentRenterPointStrategy strategy;
-    protected Customer customer;
 
     public FrequentRenterPointStrategyDecorator(FrequentRenterPointStrategy strategy)
     {
         this.strategy = strategy;
-        this.customer = strategy.getRental().getCustomer();
     }
 
     @Override
@@ -16,5 +14,15 @@ public class FrequentRenterPointStrategyDecorator implements FrequentRenterPoint
     @Override
     public Rental getRental() {
         return this.strategy.getRental();
+    }
+
+    @Override
+    public Customer getCustomer() {
+        return this.strategy.getCustomer();
+    }
+
+    @Override
+    public Transaction getTransaction() {
+        return this.strategy.getTransaction();
     }
 }
