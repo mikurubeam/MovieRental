@@ -1,18 +1,23 @@
 import java.util.List;
 
 public abstract class Statement {
+    protected Transaction transaction;
     protected Customer customer;
     protected double totalAmount;
-    protected int frequentRenterPoints;
 
-    protected Statement(Customer customer) {
-        this.customer = customer;
-        this.totalAmount = 0;
-        this.frequentRenterPoints = 0;
+    protected Statement(Transaction transaction) {
+        this.transaction = transaction;
+        this.customer = transaction.getCustomer();
     }
 
-    protected int getTotalFrequentRenterPoints() {
-        return this.frequentRenterPoints + this.customer.getFrequentRenterPoints();
+    protected Customer getCustomer() {
+        return this.customer;
+    }
+
+    public int getTotalFrequentRenterPoints() {
+        return this.customer.getFrequentRenterPoints()
+                + this.getEarnedFrequentRenterPoints()
+                - this.getSpentFrequentRenterPoints();
     }
 
     public void generateStatement() {
@@ -22,6 +27,18 @@ public abstract class Statement {
         this.addRentalSummaryByType(Rental.getFilteredList(this.customer.getRentals(), Game.class));
 
         this.addStatementFooterData();
+    }
+
+    protected double getTotalPrice() {
+        return this.transaction.getTotalPrice();
+    }
+
+    public int getEarnedFrequentRenterPoints() {
+        return this.transaction.getEarnedFrequentRenterPoints();
+    }
+
+    public int getSpentFrequentRenterPoints() {
+        return this.transaction.getSpentFrequentRenterPoints();
     }
 
     protected abstract void addStatementHeaderData();

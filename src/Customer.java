@@ -1,18 +1,15 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class Customer implements XmlElement{
+public class Customer implements XmlElement {
     private String name;
     private int age;
     private List<Rental> rentals;
     private int frequentRenterPoints;
 
-    public Customer (String name) {
+    public Customer(String name) {
         this.name = name;
         this.rentals = new ArrayList<>();
         this.frequentRenterPoints = 0;
@@ -21,6 +18,10 @@ public class Customer implements XmlElement{
     public Customer (String name, int frequentRenterPoints) {
         this(name);
         this.frequentRenterPoints = frequentRenterPoints;
+    }
+
+    public boolean isEligibleForFreeRental() {
+        return this.frequentRenterPoints >= 10;
     }
 
     public String getName() {
@@ -47,12 +48,16 @@ public class Customer implements XmlElement{
         return this.frequentRenterPoints;
     }
 
+    public void setFrequentRenterPoints(int frequentRenterPoints) {
+        this.frequentRenterPoints = frequentRenterPoints;
+    }
+
     public Element getXmlElement(Document doc) {
         Element customer = doc.createElement("customer");
 
         XmlUtils.addChild(doc, customer, "name", this.name);
 
-        Element frequentRenterPoints = doc.createElement("frequentRenterPoints");
+        Element frequentRenterPoints = doc.createElement("frequentRenterPointsEarned");
 
         XmlUtils.addChild(doc, frequentRenterPoints, "current", String.valueOf(this.frequentRenterPoints));
 
@@ -93,40 +98,70 @@ public class Customer implements XmlElement{
     }
 
     public static void main(String[] args) {
-        Customer bob = new Customer("bob");
-        bob.setAge(35);
+        Customer bob = new Customer("bob", 7);
+        bob.setAge(21);
         Customer sue = new Customer("sue", 5);
-        sue.setAge(21);
-        Customer jack = new Customer("jack");
-        jack.setAge(17);
-        Customer jill = new Customer("jill");
-        jill.setAge(19);
+        sue.setAge(35);
 
-        RentalFactory.getRental("Bambi", 10, Movie.Category.CHILDRENS, bob);
-        RentalFactory.getRental("Avengers", 10, Movie.Category.NEW_RELEASE, bob);
-        RentalFactory.getRental("Titanic", 10, Movie.Category.REGULAR, bob);
-        RentalFactory.getRental("Doom", 10, Game.Category.GENERIC, bob);
+        // First Transaction
+        Transaction bobTxn = new Transaction(bob);
+        bobTxn.setDaysRented(10);
 
-        Statement bobStatementText = new TextStatement(bob);
-        Statement bobStatementXml = new XmlStatement(bob);
+        bobTxn.addRental("Bambi", Movie.Category.CHILDRENS);
+        bobTxn.addRental("Avengers", Movie.Category.NEW_RELEASE);
+        bobTxn.addRental("Titanic", Movie.Category.REGULAR);
+        bobTxn.addRental("Doom", Game.Category.GENERIC);
 
-        bobStatementText.generateStatement();
-        bobStatementXml.generateStatement();
+//        bobTxn.printStatementAsText();
+//        bobTxn.printStatementAsXML();
+        bobTxn.completeTransaction();
 
-        System.out.println(bobStatementText);
-        System.out.println(bobStatementXml);
+        // New transaction
+        bobTxn = new Transaction(bob);
+        bobTxn.setDaysRented(5);
 
-        RentalFactory.getRental("Avengers", 2, Movie.Category.NEW_RELEASE, sue);
-        RentalFactory.getRental("Pinocchio", 2, Movie.Category.CHILDRENS, sue);
-        RentalFactory.getRental("Superman", 2, Movie.Category.REGULAR, sue);
+        bobTxn.addRental("Coco", Movie.Category.NEW_RELEASE);
+        bobTxn.addRental("Pinocchio", Movie.Category.CHILDRENS);
+        bobTxn.addRental("Superman", Movie.Category.REGULAR);
+        bobTxn.addRental("Black Panther", Movie.Category.NEW_RELEASE);
+        bobTxn.addRental("Incredibles 2", Movie.Category.NEW_RELEASE);
 
-        Statement sueStatementText = new TextStatement(sue);
-        Statement sueStatementXml = new XmlStatement(sue);
+//        bobTxn.printStatementAsText();
+//        bobTxn.printStatementAsXML();
+        bobTxn.completeTransaction();
 
-        sueStatementText.generateStatement();
-        sueStatementXml.generateStatement();
 
-        System.out.println(sueStatementText);
-        System.out.println(sueStatementXml);
+
+//        RentalFactory.getRental("Bambi", 10, Movie.Category.CHILDRENS, bob);
+//        RentalFactory.getRental("Avengers", 10, Movie.Category.NEW_RELEASE, bob);
+//        RentalFactory.getRental("Titanic", 10, Movie.Category.REGULAR, bob);
+//        RentalFactory.getRental("Doom", 10, Game.Category.GENERIC, bob);
+//
+//        Collections.sort(bob.getRentals());
+//
+//        Statement bobStatementText = new TextStatement(bob);
+//        Statement bobStatementXml = new XmlStatement(bob);
+
+//        bobStatementText.generateStatement();
+//        bobStatementXml.generateStatement();
+//
+//        System.out.println(bobStatementText);
+//        System.out.println(bobStatementXml);
+
+//        RentalFactory.getRental("Avengers", 2, Movie.Category.NEW_RELEASE, sue);
+//        RentalFactory.getRental("Pinocchio", 2, Movie.Category.CHILDRENS, sue);
+//        RentalFactory.getRental("Superman", 2, Movie.Category.REGULAR, sue);
+//        RentalFactory.getFreeRental("Coco", 2, Movie.Category.CHILDRENS, sue);
+//
+//        Collections.sort(sue.getRentals());
+//
+//        Statement sueStatementText = new TextStatement(sue);
+//        Statement sueStatementXml = new XmlStatement(sue);
+//
+//        sueStatementText.generateStatement();
+//        sueStatementXml.generateStatement();
+//
+//        System.out.println(sueStatementText);
+//        System.out.println(sueStatementXml);
     }
 }

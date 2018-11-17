@@ -5,15 +5,17 @@ public class TextStatement extends Statement {
 
     private StringBuilder statementBuilder;
 
-    public TextStatement(Customer customer) {
-        super(customer);
+    public TextStatement(Transaction transaction) {
+        super(transaction);
         this.statementBuilder = new StringBuilder();
     }
 
+    @Override
     protected void addStatementHeaderData() {
         this.statementBuilder.append(String.format("Rental Record for %s:\n", this.customer.getName()));
     }
 
+    @Override
     protected void addRentalSummaryByType(List<Rental> rentals) {
         if (rentals.isEmpty()) {
             return;
@@ -24,24 +26,38 @@ public class TextStatement extends Statement {
 
         // Itemized list of rentals by type
         for (Rental rental : rentals) {
-            this.totalAmount += rental.getRentalPrice();
-            this.frequentRenterPoints += rental.getFrequentRentalPoints();
+//            this.totalAmount += rental.getRentalPrice();
+//            if (rental.getFrequentRentalPoints() > 0) {
+//                this.frequentRenterPointsEarned += rental.getFrequentRentalPoints();
+//            } else {
+//                this.frequentRenterPointsSpent += Math.abs(rental.getFrequentRentalPoints());
+//            }
             this.statementBuilder.append(rental);
         }
 
         this.statementBuilder.append("\n");
     }
 
+    @Override
     public void addStatementFooterData() {
         // Add footer data to string builder
         this.statementBuilder.append("\t");
-        this.statementBuilder.append(StringUtil.padLeft("Amount owed is:", BASE_CONTENT_LENGTH));
+        this.statementBuilder.append(StringUtil.padLeft("Subtotal:", BASE_CONTENT_LENGTH));
         this.statementBuilder.append(
-                StringUtil.padLeft(String.format(StringUtil.USD, this.totalAmount), StringUtil.LEFT_PAD)
+                StringUtil.padLeft(String.format(StringUtil.USD, this.transaction.getTotalPrice()), StringUtil.LEFT_PAD)
+//                StringUtil.padLeft(String.format(StringUtil.USD, this.totalAmount), StringUtil.LEFT_PAD)
         );
         this.statementBuilder.append(
-                String.format("\n\nYou earned %d frequent renter points!\n", this.frequentRenterPoints)
+                String.format("\n\nCurrent frequent renter points:  %d\n", this.customer.getFrequentRenterPoints())
         );
+        this.statementBuilder.append(
+                String.format("You earned %d frequent renter points!\n", this.transaction.getEarnedFrequentRenterPoints())
+        );
+        if (this.getSpentFrequentRenterPoints() > 0) {
+            this.statementBuilder.append(
+                    String.format("You redeemed %d frequent renter points!\n", this.getSpentFrequentRenterPoints())
+            );
+        }
         this.statementBuilder.append(
                 String.format("Total frequent renter points: %d\n", this.getTotalFrequentRenterPoints())
         );

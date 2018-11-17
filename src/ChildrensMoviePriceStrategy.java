@@ -1,4 +1,4 @@
-public class ChildrensMoviePriceStrategy extends PriceStrategy {
+public class ChildrensMoviePriceStrategy extends StandardPriceStrategy {
     public ChildrensMoviePriceStrategy(Rental rental) {
         super(rental);
         this.freeRentalDays = 3;

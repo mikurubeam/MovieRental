@@ -4,7 +4,7 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Rental implements XmlElement {
+public abstract class Rental implements XmlElement, Comparable<Rental> {
     protected int daysRented;
     private Customer customer;
     private PriceStrategy priceStrategy;
@@ -19,9 +19,7 @@ public abstract class Rental implements XmlElement {
     }
 
     public int getFrequentRentalPoints() {
-        if (this.frequentRenterPointStrategy == null) {
-            this.frequentRenterPointStrategy = FrequentRenterPointStrategyFactory.getFrequentRentalPointStrategy(this);
-        }
+        this.frequentRenterPointStrategy = FrequentRenterPointStrategyFactory.getFrequentRentalPointStrategy(this);
 
         return this.frequentRenterPointStrategy.getFrequentRentalPoints();
     }
@@ -35,9 +33,11 @@ public abstract class Rental implements XmlElement {
     }
 
     public double getRentalPrice() {
-        if (this.priceStrategy == null) {
-            this.priceStrategy = PriceStrategyFactory.getPriceStrategy(this);
-        }
+        return getRentalPrice(true);
+    }
+
+    public double getRentalPrice(boolean willApplyDiscounts) {
+        this.priceStrategy = PriceStrategyFactory.getPriceStrategy(this, willApplyDiscounts);
 
         return this.priceStrategy.getPrice();
     }
@@ -50,6 +50,8 @@ public abstract class Rental implements XmlElement {
 
     public abstract Element getXmlList(Document doc);
 
+    public abstract String getTitle();
+
     public static <T> List<Rental> getFilteredList(List<Rental> rentals, Class<T> objectType) {
         List<Rental> list = new ArrayList<>();
 
@@ -60,5 +62,10 @@ public abstract class Rental implements XmlElement {
         }
 
         return list;
+    }
+
+    @Override
+    public int compareTo(Rental other) {
+        return Double.compare(other.getRentalPrice(false), this.getRentalPrice(false));
     }
 }

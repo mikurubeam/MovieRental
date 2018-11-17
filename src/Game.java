@@ -59,6 +59,11 @@ public class Game extends Rental {
     }
 
     @Override
+    public String getTitle() {
+        return this.title;
+    }
+
+    @Override
     public String toString() {
         return StringUtil.getTableRow(
                 1,
