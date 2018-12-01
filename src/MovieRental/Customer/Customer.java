@@ -1,12 +1,14 @@
 package MovieRental.Customer;
 
 import MovieRental.Common.XmlElement;
-import MovieRental.Item.Game;
-import MovieRental.Item.Movie;
+import MovieRental.Item.*;
 import MovieRental.Transaction.StandardTransaction;
 import MovieRental.Util.XmlUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import java.time.LocalDate;
+import java.time.Month;
 
 public class Customer implements XmlElement {
     private String name;
@@ -66,6 +68,16 @@ public class Customer implements XmlElement {
     }
 
     public static void main(String[] args) {
+        Movie bambi = ItemFactory.getItem("Bambi", Movie.Category.CHILDRENS, LocalDate.of(2005, Month.MARCH, 1));
+        Movie avengers = ItemFactory.getItem("Avengers", Movie.Category.REGULAR, LocalDate.of(2015, Month.OCTOBER, 2));
+        Movie titanic = ItemFactory.getItem("Titanic", Movie.Category.REGULAR, LocalDate.of(1999, Month.AUGUST, 31));
+        Dvd titanicDvd = ItemFactory.getItem(titanic);
+        Movie incredibles2 = ItemFactory.getItem("Incredibles 2", Movie.Category.CHILDRENS, LocalDate.of(2018, Month.NOVEMBER, 6));
+        Movie someNewMovie = ItemFactory.getItem("New Movie", Movie.Category.REGULAR, LocalDate.now().minusDays(2));
+        Movie someNewChildrensMovie = ItemFactory.getItem("New Childrens Movie", Movie.Category.REGULAR, LocalDate.now().minusDays(2));
+        Dvd someNewMovieDvd = ItemFactory.getItem(someNewMovie);
+        Dvd someNewChildrensMovieDvd = ItemFactory.getItem(someNewChildrensMovie);
+
         Customer bob = new Customer("bob", 7);
         bob.setAge(21);
         Customer sue = new Customer("sue", 5);
@@ -75,10 +87,14 @@ public class Customer implements XmlElement {
         StandardTransaction bobTxn = new StandardTransaction(bob);
         bobTxn.setDaysRented(10);
 
-        bobTxn.addRental("Bambi", Movie.Category.CHILDRENS);
-        bobTxn.addRental("Avengers", Movie.Category.NEW_RELEASE);
-        bobTxn.addRental("Titanic", Movie.Category.REGULAR);
-        bobTxn.addRental("Doom", Game.Category.GENERIC);
+        bobTxn.addRental(bambi);
+        bobTxn.addRental(avengers);
+        bobTxn.addRental(titanicDvd);
+        bobTxn.addRental(incredibles2);
+        bobTxn.addRental(someNewMovie);
+        bobTxn.addRental(someNewMovieDvd);
+        bobTxn.addPurchase(someNewChildrensMovie);
+        bobTxn.addPurchase(someNewChildrensMovieDvd);
 
 //        bobTxn.printStatementAsText();
 //        bobTxn.printStatementAsXML();
@@ -88,12 +104,21 @@ public class Customer implements XmlElement {
         bobTxn = new StandardTransaction(bob);
         bobTxn.setDaysRented(5);
 
-        bobTxn.addRental("Coco", Movie.Category.NEW_RELEASE);
-        bobTxn.addRental("Pinocchio", Movie.Category.CHILDRENS);
-        bobTxn.addRental("Superman", Movie.Category.REGULAR);
-        bobTxn.addRental("Black Panther", Movie.Category.NEW_RELEASE);
-        bobTxn.addRental("Incredibles 2", Movie.Category.NEW_RELEASE);
-        bobTxn.addRental("Titanic", Movie.Category.REGULAR);
+        Movie coco = ItemFactory.getItem("Coco", Movie.Category.CHILDRENS, LocalDate.of(2018, Month.FEBRUARY, 27));
+        Dvd cocoDvd = ItemFactory.getItem(coco);
+        Movie pinocchio = ItemFactory.getItem("Pinocchio", Movie.Category.CHILDRENS, LocalDate.of(1999, Month.OCTOBER, 29));
+        Movie superman = ItemFactory.getItem("Superman", Movie.Category.REGULAR, LocalDate.of(2001, Month.SEPTEMBER, 10));
+        Movie blackPanther = ItemFactory.getItem("Black Panther", Movie.Category.REGULAR, LocalDate.of(2018, Month.MAY, 15));
+        Dvd incredibles2Dvd = ItemFactory.getItem(incredibles2);
+
+        bobTxn.addRental(cocoDvd);
+        bobTxn.addRental(pinocchio);
+        bobTxn.addRental(superman);
+//        bobTxn.addRental(blackPanther);
+//        bobTxn.addRental(incredibles2Dvd);
+        bobTxn.addPurchase(titanicDvd);
+        bobTxn.addPurchase(blackPanther);
+        bobTxn.addPurchase(incredibles2Dvd);
 
 //        bobTxn.printStatementAsText();
 //        bobTxn.printStatementAsXML();

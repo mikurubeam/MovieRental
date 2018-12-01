@@ -2,9 +2,7 @@ package MovieRental.Transaction.Statement;
 
 import MovieRental.Common.*;
 import MovieRental.Customer.Customer;
-import MovieRental.Item.Game;
-import MovieRental.Item.Item;
-import MovieRental.Item.Movie;
+import MovieRental.Item.*;
 import MovieRental.Transaction.Transaction;
 import MovieRental.Transaction.TransactionDecorator;
 
@@ -25,8 +23,21 @@ public abstract class Statement extends TransactionDecorator implements Printabl
     }
 
     public void addStatementBody() {
-        this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Movie.class));
-        this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Game.class));
+        if (this.transaction.getRentals().size() > 0) {
+            this.addRentalHeader();
+            this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Movie.class, Dvd.class));
+            this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Game.class));
+            this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), CompactDisc.class));
+            this.addRentalSummaryByType(Item.getFilteredList(this.getRentals(), Book.class));
+        }
+
+        if (this.transaction.getPurchases().size() > 0) {
+            this.addPurchaseHeader();
+            this.addPurchaseSummaryByType(Item.getFilteredList(this.getPurchases(), Movie.class, Dvd.class));
+            this.addPurchaseSummaryByType(Item.getFilteredList(this.getPurchases(), Game.class));
+            this.addPurchaseSummaryByType(Item.getFilteredList(this.getPurchases(), CompactDisc.class));
+            this.addPurchaseSummaryByType(Item.getFilteredList(this.getPurchases(), Book.class));
+        }
     }
 
     public Statement getDiscountStatement(Transaction transaction) {

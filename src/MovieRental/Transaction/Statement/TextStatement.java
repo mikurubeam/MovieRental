@@ -19,7 +19,7 @@ public class TextStatement extends Statement {
 
     @Override
     public void addStatementHeader() {
-        this.statementBuilder.append(String.format("MovieRental.Strategy.Item Record for %s:\n", this.customer.getName()));
+        this.statementBuilder.append(String.format("Transaction Record for %s:\n", this.customer.getName()));
     }
 
     @Override
@@ -28,12 +28,43 @@ public class TextStatement extends Statement {
             return;
         }
 
-        // Summary header by type
-        this.statementBuilder.append(items.get(0).getTableHeader());
+        // Itemized list of items by type
+        for (Item item : items) {
+            // Summary header by type
+            if (items.indexOf(item) == 0) {
+                this.statementBuilder.append(item.getRentalHeader());
+            }
+
+            this.statementBuilder.append(item.getRentalString());
+        }
+
+        this.statementBuilder.append("\n");
+    }
+
+    @Override
+    public void addPurchaseHeader() {
+        this.statementBuilder.append("Purchases:\n");
+    }
+
+    @Override
+    public void addRentalHeader() {
+        this.statementBuilder.append("Rentals:\n");
+    }
+
+    @Override
+    public void addPurchaseSummaryByType(List<Item> items) {
+        if (items.isEmpty()) {
+            return;
+        }
 
         // Itemized list of items by type
         for (Item item : items) {
-            this.statementBuilder.append(item);
+            // Summary header by type
+            if (items.indexOf(item) == 0) {
+                this.statementBuilder.append(item.getPurchaseHeader());
+            }
+
+            this.statementBuilder.append(item.getPurchaseString());
         }
 
         this.statementBuilder.append("\n");
@@ -42,6 +73,18 @@ public class TextStatement extends Statement {
     @Override
     public void addStatementFooter() {
         // Add footer data to string builder
+        this.statementBuilder.append("\t");
+        this.statementBuilder.append(StringUtil.padLeft("Rental Subtotal:", BASE_CONTENT_LENGTH));
+        this.statementBuilder.append(
+                StringUtil.padLeft(String.format(StringUtil.USD, this.getRentalPriceTotal()), StringUtil.LEFT_PAD)
+        );
+        this.statementBuilder.append("\n");
+        this.statementBuilder.append("\t");
+        this.statementBuilder.append(StringUtil.padLeft("Purchase Subtotal:", BASE_CONTENT_LENGTH));
+        this.statementBuilder.append(
+                StringUtil.padLeft(String.format(StringUtil.USD, this.getPurchasePriceSubtotal()), StringUtil.LEFT_PAD)
+        );
+        this.statementBuilder.append("\n");
         this.statementBuilder.append("\t");
         this.statementBuilder.append(StringUtil.padLeft("Subtotal:", BASE_CONTENT_LENGTH));
         this.statementBuilder.append(
@@ -52,7 +95,7 @@ public class TextStatement extends Statement {
                 StringUtil.padLeft(String.format("%d Items Rented", this.getRentals().size()), BASE_CONTENT_LENGTH)
         );
         if (this.transaction instanceof PercentDiscountTransaction) {
-                this.statementBuilder.append(String.format(" (%s Discount!)", this.transaction));
+                this.statementBuilder.append(String.format(" (%s Purchase Discount!)", this.transaction));
         }
         this.statementBuilder.append("\n");
         this.statementBuilder.append(StringUtil.padLeft("Total:", BASE_CONTENT_LENGTH));

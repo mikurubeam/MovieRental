@@ -8,12 +8,12 @@ public class PercentDiscountTransaction extends TransactionDecorator {
         this.discount = 0;
     }
 
-    public double getTotalPrice() {
-        return super.getTotalPrice() * (1 - this.discount);
+    public double getPurchasePriceTotal() {
+        return super.getPurchasePriceSubtotal() * (1 - this.discount);
     }
 
-    public double getDiscount() {
-        return this.discount;
+    public double getTotalPrice() {
+        return this.getRentalPriceTotal() + this.getPurchasePriceTotal();
     }
 
     @Override

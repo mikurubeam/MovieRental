@@ -1,9 +1,7 @@
 package MovieRental.Transaction;
 
 import MovieRental.Customer.Customer;
-import MovieRental.Item.Game;
 import MovieRental.Item.Item;
-import MovieRental.Item.ItemFactory;
 import MovieRental.Item.Movie;
 import MovieRental.Transaction.Statement.Statement;
 import MovieRental.Transaction.Statement.TextStatement;
@@ -16,10 +14,12 @@ public class StandardTransaction implements Transaction {
     private Statement statement;
     private int daysRented;
     private Map<String, Item> rentals;
+    private List<Item> purchases;
 
     public StandardTransaction(Customer customer) {
         this.customer = customer;
         this.rentals = new HashMap<>();
+        this.purchases = new ArrayList<>();
         this.statement = new TextStatement(this);
     }
 
@@ -40,8 +40,8 @@ public class StandardTransaction implements Transaction {
     }
 
     public boolean hasNewReleases() {
-        for (Item item : Item.getFilteredList(this.getRentals(), Movie.class)) {
-            if (((Movie) item).getMovieType() == Movie.Category.NEW_RELEASE) {
+        for (Item item : this.getRentals()) {
+            if (item.isNewRelease()) {
                 return true;
             }
         }
@@ -57,20 +57,31 @@ public class StandardTransaction implements Transaction {
         return items;
     }
 
+    @Override
+    public List<Item> getPurchases() {
+        return this.purchases;
+    }
+
     public void setDaysRented(int daysRented) {
         this.daysRented = daysRented;
+    }
+
+    public int getDaysRented() {
+        return this.daysRented;
     }
 
     public Customer getCustomer() {
         return this.customer;
     }
 
-    public void addRental(String title, Movie.Category movieCategory) {
-        this.rentals.put(title, ItemFactory.getItem(title, this.daysRented, movieCategory, this));
+    public void addRental(Item item) {
+        item.setTransaction(this);
+        this.rentals.put(item.getTitle(), item);
     }
 
-    public void addRental(String title, Game.Category gameCategory) {
-        this.rentals.put(title, ItemFactory.getItem(title, this.daysRented, gameCategory, this));
+    public void addPurchase(Item item) {
+        item.setTransaction(this);
+        this.purchases.add(item);
     }
 
     public void completeTransaction() {
@@ -79,17 +90,38 @@ public class StandardTransaction implements Transaction {
         this.customer.setFrequentRenterPoints(this.getTotalFrequentRenterPoints());
     }
 
-    public double getSubtotal() {
-        return this.getTotalPrice();
-    }
-
-    public double getTotalPrice() {
+    @Override
+    public double getRentalPriceTotal() {
         double total = 0;
         for (Item item : rentals.values()) {
             total += item.getRentalPrice();
         }
 
         return total;
+    }
+
+    @Override
+    public double getPurchasePriceSubtotal() {
+        double total = 0;
+        for (Item item : purchases) {
+            total += item.getPurchasePrice();
+        }
+
+        return total;
+    }
+
+    @Override
+    public double getPurchasePriceTotal() {
+        return this.getPurchasePriceSubtotal();
+    }
+
+    public double getSubtotal()
+    {
+        return this.getRentalPriceTotal() + this.getPurchasePriceSubtotal();
+    }
+
+    public double getTotalPrice() {
+        return this.getRentalPriceTotal() + this.getPurchasePriceTotal();
     }
 
     public int getEarnedFrequentRenterPoints() {
@@ -118,10 +150,12 @@ public class StandardTransaction implements Transaction {
     }
 
     private void applyDiscounts() {
-        if (this.rentals.size() > 5) {
-            this.statement = this.statement.getDiscountStatement(new FiftyPercentDiscountTransaction(this));
-        } else if (this.rentals.size() >= 3) {
-            this.statement = this.statement.getDiscountStatement(new TwentyPercentDiscountTransaction(this));
+        if (this.purchases.size() > 0) {
+            if (this.rentals.size() > 5) {
+                this.statement = this.statement.getDiscountStatement(new FiftyPercentDiscountTransaction(this));
+            } else if (this.rentals.size() >= 3) {
+                this.statement = this.statement.getDiscountStatement(new TwentyPercentDiscountTransaction(this));
+            }
         }
     }
 

@@ -32,6 +32,17 @@ public class XmlUtils {
         return null;
     }
 
+    public static void addChild(Document doc, Element parent, String tagName) {
+        Element element = doc.createElement(tagName);
+        parent.appendChild(element);
+    }
+
+    public static void addChild(Document doc, Element parent, String tagName, boolean isList) {
+        Element element = doc.createElement(tagName);
+        element.setIdAttribute(tagName + "List", isList);
+        parent.appendChild(element);
+    }
+
     public static void addChild(Document doc, Element parent, String tagName, String value) {
         Element element = doc.createElement(tagName);
         element.appendChild(doc.createTextNode(value));

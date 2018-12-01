@@ -13,12 +13,12 @@ public class Game extends Item {
     private int systemType;
 
     public Game() {
-        this.title = "Some MovieRental.Strategy.Game";
+        this.title = "Some Game";
         this.systemType = Category.GENERIC.ordinal();
     }
 
     public Game(String title, int gameType) {
-        this.title = "Some MovieRental.Strategy.Game";
+        this.title = title;
         this.systemType = gameType;
     }
 
@@ -26,25 +26,32 @@ public class Game extends Item {
         return Category.values()[this.systemType];
     }
 
-//    public double getRentalPrice() {
-//        return 0;
-//    }
-
     protected int getPaidRentalDays() {
         return 0;
     }
 
-    public String getTableHeader() {
-        return "MovieRental.Strategy.Game MovieRental.Strategy.Item Summary:\n" +
-            StringUtil.getTableRow(
-                1,
-                2,
-                "TITLE",
-                "SYSTEM",
-                "DAYS RENTED",
-                "PRICE",
-                "POINTS"
-            );
+    public String getRentalHeader() {
+        return "Game Summary:\n" +
+                StringUtil.getTableRow(
+                        1,
+                        2,
+                        "TITLE",
+                        "SYSTEM",
+                        "DAYS RENTED",
+                        "PRICE",
+                        "POINTS"
+                );
+    }
+
+    public String getPurchaseHeader() {
+        return "Game Summary:\n" +
+                StringUtil.getTableRow(
+                        1,
+                        2,
+                        "TITLE",
+                        "SYSTEM",
+                        "PRICE"
+                );
     }
 
     public Element getXmlList(Document doc) {
@@ -56,7 +63,7 @@ public class Game extends Item {
 
         XmlUtils.addChild(doc, game, "title", this.title);
         XmlUtils.addChild(doc, game, "gameSystem", this.getGameSystem().toString());
-        XmlUtils.addChild(doc, game, "daysRented", String.valueOf(this.daysRented));
+        XmlUtils.addChild(doc, game, "daysRented", String.valueOf(this.getTransaction().getDaysRented()));
         XmlUtils.addChild(doc, game, "Price", String.format(StringUtil.USD, this.getRentalPrice()));
         XmlUtils.addChild(doc, game, "points", String.valueOf(this.getFrequentRentalPoints()));
 
@@ -69,15 +76,26 @@ public class Game extends Item {
     }
 
     @Override
-    public String toString() {
+    public String getRentalString() {
         return StringUtil.getTableRow(
                 1,
                 1,
                 this.title,
                 this.getGameSystem().toString(),
-                String.valueOf(this.daysRented),
+                String.valueOf(this.getDaysRented()),
                 String.format(StringUtil.USD, this.getRentalPrice()),
                 String.valueOf(this.getFrequentRentalPoints())
+        );
+    }
+
+    @Override
+    public String getPurchaseString() {
+        return StringUtil.getTableRow(
+                1,
+                1,
+                this.title,
+                this.getGameSystem().toString(),
+                String.format(StringUtil.USD, this.getRentalPrice())
         );
     }
 }

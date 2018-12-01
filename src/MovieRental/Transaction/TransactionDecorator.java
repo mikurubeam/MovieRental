@@ -30,13 +30,8 @@ public class TransactionDecorator implements Transaction {
     }
 
     @Override
-    public void addRental(String title, Movie.Category movieCategory) {
-        this.transaction.addRental(title, movieCategory);
-    }
-
-    @Override
-    public void addRental(String title, Game.Category gameCategory) {
-        this.transaction.addRental(title, gameCategory);
+    public void addRental(Item item) {
+        this.transaction.addRental(item);
     }
 
     @Override
@@ -87,5 +82,35 @@ public class TransactionDecorator implements Transaction {
     @Override
     public boolean hasNewReleases() {
         return this.transaction.hasNewReleases();
+    }
+
+    @Override
+    public int getDaysRented() {
+        return this.transaction.getDaysRented();
+    }
+
+    @Override
+    public List<Item> getPurchases() {
+        return this.transaction.getPurchases();
+    }
+
+    @Override
+    public void addPurchase(Item item) {
+        this.transaction.addPurchase(item);
+    }
+
+    @Override
+    public double getRentalPriceTotal() {
+        return this.transaction.getRentalPriceTotal();
+    }
+
+    @Override
+    public double getPurchasePriceTotal() {
+        return this.transaction.getPurchasePriceTotal();
+    }
+
+    @Override
+    public double getPurchasePriceSubtotal() {
+        return this.transaction.getPurchasePriceSubtotal();
     }
 }

@@ -1,5 +1,6 @@
 package MovieRental.Transaction.Statement;
 
+import MovieRental.Common.XmlElement;
 import MovieRental.Item.Item;
 import MovieRental.Transaction.PercentDiscountTransaction;
 import MovieRental.Transaction.Transaction;
@@ -30,9 +31,29 @@ public class XmlStatement extends Statement{
             return;
         }
 
+        Element rentalsList = this.xmlDocument.getElementById("rentalsList");
+
         // Create XML list by type
         Element typeList = items.get(0).getXmlList(this.xmlDocument);
-        this.xmlRoot.appendChild(typeList);
+        rentalsList.appendChild(typeList);
+
+        // Itemized list of items by type
+        for (Item item : items) {
+            typeList.appendChild(item.getXmlElement(this.xmlDocument));
+        }
+    }
+
+    @Override
+    public void addPurchaseSummaryByType(List<Item> items) {
+        if (items.isEmpty()) {
+            return;
+        }
+
+        Element purchasesList = this.xmlDocument.getElementById("purchasesList");
+
+        // Create XML list by type
+        Element typeList = items.get(0).getXmlList(this.xmlDocument);
+        purchasesList.appendChild(typeList);
 
         // Itemized list of items by type
         for (Item item : items) {
@@ -84,5 +105,15 @@ public class XmlStatement extends Statement{
     @Override
     public String toString() {
         return XmlUtils.getDocumentString(this.xmlDocument);
+    }
+
+    @Override
+    public void addPurchaseHeader() {
+        XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "purchases", true);
+    }
+
+    @Override
+    public void addRentalHeader() {
+        XmlUtils.addChild(this.xmlDocument, this.xmlRoot, "rentals", true);
     }
 }

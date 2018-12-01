@@ -8,7 +8,9 @@ public class AgeRangeFrequentRenterPointStrategy extends FrequentRenterPointStra
     public int getFrequentRentalPoints() {
         int points = super.getFrequentRentalPoints();
 
-        if (this.getCustomer().isInAgeRange(18, 22) && this.getTransaction().hasNewReleases()) {
+        if (this.getCustomer() != null
+                && this.getCustomer().isInAgeRange(18, 22) && this.getTransaction().hasNewReleases()
+        ) {
             points *= 2;
         }
 

@@ -19,4 +19,10 @@ public interface Printable {
     void addRentalSummaryByType(List<Item> items);
 
     void addStatementFooter();
+
+    void addPurchaseSummaryByType(List<Item> items);
+
+    void addPurchaseHeader();
+
+    void addRentalHeader();
 }

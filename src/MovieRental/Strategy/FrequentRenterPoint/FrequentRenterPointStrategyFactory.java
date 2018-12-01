@@ -10,7 +10,7 @@ public class FrequentRenterPointStrategyFactory {
             strategy = new MultipleCategoryFrequentRenterPointStrategy(strategy);
             strategy = new AgeRangeFrequentRenterPointStrategy(strategy);
 
-            if (((Movie) item).getMovieType() == Movie.Category.NEW_RELEASE) {
+            if (item.isNewRelease()) {
                 strategy =  new NewReleaseFrequentRenterPointStrategy(strategy);
             }
         }

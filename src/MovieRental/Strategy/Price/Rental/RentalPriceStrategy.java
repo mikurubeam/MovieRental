@@ -2,6 +2,7 @@ package MovieRental.Strategy.Price.Rental;
 import MovieRental.Item.Item;
 import MovieRental.Customer.Customer;
 import MovieRental.Strategy.Price.PriceStrategy;
+import MovieRental.Transaction.Transaction;
 
 public class RentalPriceStrategy implements PriceStrategy {
     protected int freeRentalDays;
@@ -31,4 +32,22 @@ public class RentalPriceStrategy implements PriceStrategy {
     protected int getPaidRentalDays() {
         return Math.max(0, this.item.getDaysRented() - this.freeRentalDays);
     }
+
+    public double getBasePrice() {
+        return this.basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public double getPricePerDay() {
+        return this.pricePerDay;
+    }
+
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+
 }

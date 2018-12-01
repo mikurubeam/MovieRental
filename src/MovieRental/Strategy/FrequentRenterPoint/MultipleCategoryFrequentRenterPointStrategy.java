@@ -8,7 +8,7 @@ public class MultipleCategoryFrequentRenterPointStrategy extends FrequentRenterP
     public int getFrequentRentalPoints() {
         int points = super.getFrequentRentalPoints();
 
-        if (this.getTransaction().hasMultipleMovieCategories(2)) {
+        if (this.getTransaction() != null && this.getTransaction().hasMultipleMovieCategories(2)) {
             points *= 2;
         }
 

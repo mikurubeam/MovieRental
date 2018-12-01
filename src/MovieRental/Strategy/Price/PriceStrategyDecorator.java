@@ -3,7 +3,7 @@ import MovieRental.Item.Item;
 import MovieRental.Customer.Customer;
 
 public class PriceStrategyDecorator implements PriceStrategy {
-    private PriceStrategy strategy;
+    protected PriceStrategy strategy;
 
     public PriceStrategyDecorator(PriceStrategy strategy) {
         this.strategy = strategy;

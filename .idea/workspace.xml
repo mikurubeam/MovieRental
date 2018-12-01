@@ -2,42 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f885df1f-c3c1-482f-8317-1fc109c84a77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/AgeRangeFrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChildrensMoviePriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FiftyPercentDiscountTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FreeRentalFrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FreeRentalPriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoviePriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultipleCategoryFrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewReleaseFrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewReleaseMoviePriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PercentDiscountTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PriceStrategyDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PriceStrategyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Printable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandardFrequentRenterPointStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandardPriceStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandardTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Statement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StringUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwentyPercentDiscountTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XmlElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XmlStatement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XmlUtils.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Item/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Item/CompactDisc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Item/Dvd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/ChildrensMoviePurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/DvdPurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/GamePurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/MoviePurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/NewReleasePurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/PurchasePriceStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/DvdRentalPriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Common/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Common/Printable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Item/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Item/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Item/ItemDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Item/ItemDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Item/ItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Item/ItemFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Item/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Item/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/MultipleCategoryFrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/MultipleCategoryFrequentRenterPointStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/NewReleaseFrequentRenterPointStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/NewReleaseFrequentRenterPointStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MovieRental/Util/XmlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MovieRental/Util/XmlUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,41 +48,56 @@
     <session id="484980585">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="404" />
+          <entry key="java" value="480" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="404" />
+          <entry key="JAVA" value="576" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="java" value="31009" />
+          <entry key="java" value="35419" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="31009" />
+          <entry key="JAVA" value="39463" />
           <entry key="PLAIN_TEXT" value="72" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Item.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="81" column="40" lean-forward="true" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Movie.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1035">
-              <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+              <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,46 +106,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="84">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="125" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1340#1341#0" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+                <element signature="e#2977#2978#0" expanded="true" />
+                <element signature="e#3003#3004#0" expanded="true" />
+                <element signature="e#3070#3071#0" expanded="true" />
+                <element signature="e#3153#3154#0" expanded="true" />
+                <element signature="e#3203#3204#0" expanded="true" />
+                <element signature="e#3273#3274#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="308">
+              <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+                <element signature="e#2246#2247#0" expanded="true" />
+                <element signature="e#2302#2303#0" expanded="true" />
+                <element signature="e#2352#2353#0" expanded="true" />
+                <element signature="e#2658#2659#0" expanded="true" />
+                <element signature="e#2684#2685#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Customer/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="398">
+              <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,46 +155,66 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/NewReleaseMovieRentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="161">
+              <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
+              <caret line="36" column="82" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
+              <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+              <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/ChildrensMovieRentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/FreeRentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="-116">
+              <caret line="84" column="90" selection-start-line="84" selection-start-column="90" selection-end-line="84" selection-end-column="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/GameRentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="242">
+              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/MovieRentalPriceStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="-341">
+              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -216,6 +250,12 @@
       <find>printSt</find>
       <find>pricestrateg</find>
       <find>frequentrenterpoint</find>
+      <find>setre</find>
+      <find>movie</find>
+      <find>gettableheader</find>
+      <find>hasmul`</find>
+      <find>getsubtotal</find>
+      <find>gettotal</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -235,63 +275,69 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/StandardPriceStrategy.java" />
-        <option value="$PROJECT_DIR$/src/Printable.java" />
-        <option value="$PROJECT_DIR$/src/FiftyPercentTransaction.java" />
-        <option value="$PROJECT_DIR$/src/FreeRentalFrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/PriceStrategy.java" />
-        <option value="$PROJECT_DIR$/src/FrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/StandardFrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/FrequentRenterPointStrategyDecorator.java" />
-        <option value="$PROJECT_DIR$/src/MultipleCategoryFrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/AgeRangeFrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/TransactionDecorator.java" />
-        <option value="$PROJECT_DIR$/src/EightyPercentTransaction.java" />
-        <option value="$PROJECT_DIR$/src/TwentyPercentDiscountTransaction.java" />
-        <option value="$PROJECT_DIR$/src/FiftyPercentDiscountTransaction.java" />
-        <option value="$PROJECT_DIR$/src/PercentDiscountTransaction.java" />
-        <option value="$PROJECT_DIR$/src/TextStatement.java" />
-        <option value="$PROJECT_DIR$/src/FrequentRenterPointStrategyFactory.java" />
-        <option value="$PROJECT_DIR$/src/StandardStatement.java" />
-        <option value="$PROJECT_DIR$/src/Statement.java" />
-        <option value="$PROJECT_DIR$/src/StandardTransaction.java" />
-        <option value="$PROJECT_DIR$/src/Customer.java" />
-        <option value="$PROJECT_DIR$/src/Rental.java" />
-        <option value="$PROJECT_DIR$/src/XmlStatement.java" />
-        <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/Movie.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/strategy/frequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Game.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Item.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Item/ItemFactory.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/StandardPriceStrategy.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/MoviePriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/NewReleaseMoviePriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/ChildrensMoviePriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/GamePriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/StandardFrequentRenterPointStrategy.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/NewReleaseFrequentRenterPointStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyDecorator.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Item/Game.java" />
-        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/RentalPriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/NewReleaseMovieRentalPriceStrategy.java" />
         <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/NewReleaseMovieRentalPriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/NewReleaseFrequentRenterPointStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Dvd.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/DvdRentalPriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Util/StringUtil.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/ItemFactory.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/ItemDecorator.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Movie.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Game.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/CompactDisc.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Book.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Rentable.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/MultipleCategoryFrequentRenterPointStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/GamePurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/MoviePurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/ChildrensMoviePurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/PurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Common/Printable.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Util/XmlUtils.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/DvdPurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/NewReleasePurchasePriceStrategy.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Purchasable.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Item/Item.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java" />
+        <option value="$PROJECT_DIR$/src/MovieRental/Customer/Customer.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -299,6 +345,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -352,7 +399,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
               <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="FrequentRenterPoint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieRental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
               <item name="Price" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieRental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Price" type="462c0819:PsiDirectoryNode" />
+              <item name="Purchase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieRental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Price" type="462c0819:PsiDirectoryNode" />
+              <item name="Rental" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MovieRental" type="b2602c69:ProjectViewProjectNode" />
@@ -366,17 +439,24 @@
               <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="Transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="Statement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieRental" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieRental" type="462c0819:PsiDirectoryNode" />
               <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542495135949" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543694840720" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -385,6 +465,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="MovieRental.Strategy.Price.Purchase" />
+      <recent name="MovieRental.Item" />
+      <recent name="MovieRental.Strategy.Price.Rental" />
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -449,31 +532,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24248926" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" sideWeight="0.49785408" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49928468" visible="true" weight="0.32168674" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50214595" side_tool="true" weight="0.40963855" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" sideWeight="0.49713877" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49570817" weight="0.32168674" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5135909" side_tool="true" visible="true" weight="0.40963855" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32771084" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49785408" weight="0.40963855" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49928468" weight="0.32771084" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.48640916" visible="true" weight="0.40963855" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3299363" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4892704" weight="0.32891566" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -484,165 +568,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/RegularMovie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewRelease.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChildrensMovie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CategoryBasedDoubleFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="13" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoubleFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CategoryBasedFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AgeBasedFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FirstRentalBonusNewReleaseFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StatementDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FreeRental.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#349#350#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FirstRentalFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StandardStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="68" selection-start-column="68" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Util/XmlUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/TwentyPercentDiscountTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstRentalFrequentRenterPointStrategy.java" />
+    <entry file="file://$PROJECT_DIR$/src/StandardStatement.java" />
     <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FreeRentalFrequentRenterPointStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -670,145 +597,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/MultipleCategoryFrequentRenterPointStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/NewReleaseFrequentRenterPointStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/ComparableTimSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="319" selection-start-line="319" selection-end-line="319" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/TwentyPercentDiscountTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/StandardFrequentRenterPointStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/FrequentRenterPointStrategyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Dvd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Common/Printable.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Util/StringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Common/XmlElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Customer/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-778">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/ItemFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="1350">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/ItemDecorator.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/FiftyPercentDiscountTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -825,27 +676,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyDecorator.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/ItemDecorator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Rentable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/CompactDisc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        <state relative-caret-position="990">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="84" column="36" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/ChildrensMovieRentalPriceStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/StandardFrequentRenterPointStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/AgeRangeFrequentRenterPointStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/MovieRentalPriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/GameRentalPriceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
@@ -859,31 +782,252 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/GameRentalPriceStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/ChildrensMovieRentalPriceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/MovieRentalPriceStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Common/XmlElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Common/Printable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Util/XmlUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/FrequentRenterPoint/MultipleCategoryFrequentRenterPointStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="95" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/NewReleaseMovieRentalPriceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <caret line="3" column="56" lean-forward="true" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/RentalPriceStrategy.java">
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Rental/DvdRentalPriceStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/NewReleasePurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/MoviePurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/ChildrensMoviePurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/GamePurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/DvdPurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#362#363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/FiftyPercentDiscountTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Purchasable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/Purchase/PurchasePriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Strategy/Price/PriceStrategyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="81" column="40" lean-forward="true" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Item/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/XmlStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-341">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
+          <caret line="36" column="82" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
+          <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+          <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/TransactionDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="113" column="59" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="59" />
+          <folding>
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+            <element signature="e#2302#2303#0" expanded="true" />
+            <element signature="e#2352#2353#0" expanded="true" />
+            <element signature="e#2658#2659#0" expanded="true" />
+            <element signature="e#2684#2685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/Statement/TextStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="84" column="90" selection-start-line="84" selection-start-column="90" selection-end-line="84" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/StandardTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="125" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+            <element signature="e#3153#3154#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#3273#3274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Transaction/PercentDiscountTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovieRental/Customer/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="103" column="46" lean-forward="true" selection-start-line="103" selection-start-column="46" selection-end-line="103" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

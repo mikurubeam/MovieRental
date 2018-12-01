@@ -9,16 +9,25 @@ import java.util.List;
 
 public interface Transaction {
     List<Item> getRentals();
+    List<Item> getPurchases();
 
     void setDaysRented(int daysRented);
 
+    int getDaysRented();
+
     Customer getCustomer();
 
-    void addRental(String title, Movie.Category movieCategory);
+    void addRental(Item item);
 
-    void addRental(String title, Game.Category gameCategory);
+    void addPurchase(Item item);
 
     void completeTransaction();
+
+    double getRentalPriceTotal();
+
+    double getPurchasePriceSubtotal();
+
+    double getPurchasePriceTotal();
 
     double getSubtotal();
 

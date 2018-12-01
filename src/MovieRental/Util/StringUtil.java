@@ -2,8 +2,9 @@ package MovieRental.Util;
 
 public class StringUtil {
     public static final String USD = "$%.2f";
-    public static final int LEFT_PAD = 10;
+    public static final int LEFT_PAD = 5;
     public static final int RIGHT_PAD = 15;
+    public static final int RIGHT_PAD_FIRST_COLUMN = 30;
 
     public static String padLeft(String string, int n) {
         return String.format("%" + n + "s", string);
@@ -23,7 +24,9 @@ public class StringUtil {
         for (int i = 0 ; i < strings.length ; i++) {
             if (i == (strings.length - 1)) {
                 stringBuilder.append(padLeft(strings[i], LEFT_PAD));
-
+            } else
+                if (i == 0) {
+                stringBuilder.append(padRight(strings[i], RIGHT_PAD_FIRST_COLUMN));
             } else {
                 stringBuilder.append(padRight(strings[i], RIGHT_PAD));
             }
