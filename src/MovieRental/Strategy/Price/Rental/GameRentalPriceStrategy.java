@@ -4,10 +4,8 @@ import MovieRental.Item.Item;
 public class GameRentalPriceStrategy extends RentalPriceStrategy {
     public GameRentalPriceStrategy(Item item) {
         super(item);
-    }
-
-    @Override
-    public double getPrice() {
-        return 5.0;
+        this.freeRentalDays = 3;
+        this.basePrice = 4;
+        this.pricePerDay = 1;
     }
 }

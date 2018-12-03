@@ -113,4 +113,14 @@ public class TransactionDecorator implements Transaction {
     public double getPurchasePriceSubtotal() {
         return this.transaction.getPurchasePriceSubtotal();
     }
+
+    @Override
+    public void removeRental(Item item) {
+        this.transaction.removeRental(item);
+    }
+
+    @Override
+    public void removePurchase(Item item) {
+        this.transaction.removePurchase(item);
+    }
 }

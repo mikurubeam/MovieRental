@@ -21,16 +21,16 @@ public class RentalPriceStrategy implements PriceStrategy {
         return this.basePrice + (this.pricePerDay * this.getPaidRentalDays());
     }
 
+    protected int getPaidRentalDays() {
+        return Math.max(0, this.item.getDaysRented() - this.freeRentalDays);
+    }
+
     public Item getItem() {
         return this.item;
     }
 
     public Customer getCustomer() {
         return this.item.getCustomer();
-    }
-
-    protected int getPaidRentalDays() {
-        return Math.max(0, this.item.getDaysRented() - this.freeRentalDays);
     }
 
     public double getBasePrice() {
@@ -44,10 +44,4 @@ public class RentalPriceStrategy implements PriceStrategy {
     public double getPricePerDay() {
         return this.pricePerDay;
     }
-
-    public void setPricePerDay(double pricePerDay) {
-        this.pricePerDay = pricePerDay;
-    }
-
-
 }

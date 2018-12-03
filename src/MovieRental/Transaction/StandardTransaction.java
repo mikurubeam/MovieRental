@@ -31,9 +31,6 @@ public class StandardTransaction implements Transaction {
 
         return new ArrayList<>(movieTypes.keySet());
     }
-    public boolean hasMultipleMovieCategories() {
-        return this.hasMultipleMovieCategories(1);
-    }
 
     public boolean hasMultipleMovieCategories(int min) {
         return this.getRentedMovieCategories().size() > min;
@@ -84,10 +81,18 @@ public class StandardTransaction implements Transaction {
         this.purchases.add(item);
     }
 
+    public void removeRental(Item item) {
+        this.rentals.remove(item.getTitle());
+    }
+
+    public void removePurchase(Item item) {
+        this.purchases.remove(item);
+    }
+
     public void completeTransaction() {
-        this.applyDiscounts();
+//        this.applyDiscounts();
         this.printStatement();
-        this.customer.setFrequentRenterPoints(this.getTotalFrequentRenterPoints());
+        this.customer.archiveTransaction(this);
     }
 
     @Override
@@ -149,7 +154,7 @@ public class StandardTransaction implements Transaction {
                 - this.getSpentFrequentRenterPoints();
     }
 
-    private void applyDiscounts() {
+    public void applyDiscounts() {
         if (this.purchases.size() > 0) {
             if (this.rentals.size() > 5) {
                 this.statement = this.statement.getDiscountStatement(new FiftyPercentDiscountTransaction(this));
@@ -161,13 +166,13 @@ public class StandardTransaction implements Transaction {
 
     public void printStatementAsText() {
         this.statement = new TextStatement(this);
-        applyDiscounts();
+//        applyDiscounts();
         this.printStatement();
     }
 
     public void printStatementAsXML() {
         this.statement = new XmlStatement(this);
-        applyDiscounts();
+//        applyDiscounts();
         this.printStatement();
     }
 

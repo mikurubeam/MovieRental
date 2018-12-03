@@ -21,6 +21,7 @@ public abstract class Item implements XmlElement, Comparable<Item>, Rentable, Pu
     private static final int NEW_RELEASE_DAYS = 30;
     private LocalDate releaseDate;
     private Transaction transaction;
+    private double purchasePrice;
 
     public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
@@ -75,11 +76,20 @@ public abstract class Item implements XmlElement, Comparable<Item>, Rentable, Pu
         return priceStrategy.getPrice();
     }
 
+    public double getBasePurchasePrice() {
+        return this.purchasePrice;
+    }
+
     @Override
     public double getPurchasePrice() {
         PriceStrategy priceStrategy = PriceStrategyFactory.getPurchasePriceStrategy(this);
 
         return priceStrategy.getPrice();
+    }
+
+    @Override
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
     }
 
     @Override

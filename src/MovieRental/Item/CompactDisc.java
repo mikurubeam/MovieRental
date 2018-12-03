@@ -6,7 +6,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class CompactDisc extends Item {
-    public enum Category {SINGLE, ALBUM, AUDIO_BOOK}
+    public enum Category {SINGLE, ALBUM}
 
     private String title;
     private int cdType;

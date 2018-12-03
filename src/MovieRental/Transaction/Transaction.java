@@ -21,6 +21,10 @@ public interface Transaction {
 
     void addPurchase(Item item);
 
+    void removeRental(Item item);
+
+    void removePurchase(Item item);
+
     void completeTransaction();
 
     double getRentalPriceTotal();

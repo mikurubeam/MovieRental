@@ -85,12 +85,12 @@ public class TextStatement extends Statement {
                 StringUtil.padLeft(String.format(StringUtil.USD, this.getPurchasePriceSubtotal()), StringUtil.LEFT_PAD)
         );
         this.statementBuilder.append("\n");
-        this.statementBuilder.append("\t");
-        this.statementBuilder.append(StringUtil.padLeft("Subtotal:", BASE_CONTENT_LENGTH));
-        this.statementBuilder.append(
-                StringUtil.padLeft(String.format(StringUtil.USD, this.getSubtotal()), StringUtil.LEFT_PAD)
-        );
-        this.statementBuilder.append("\n");
+//        this.statementBuilder.append("\t");
+//        this.statementBuilder.append(StringUtil.padLeft("Subtotal:", BASE_CONTENT_LENGTH));
+//        this.statementBuilder.append(
+//                StringUtil.padLeft(String.format(StringUtil.USD, this.getSubtotal()), StringUtil.LEFT_PAD)
+//        );
+//        this.statementBuilder.append("\n");
         this.statementBuilder.append(
                 StringUtil.padLeft(String.format("%d Items Rented", this.getRentals().size()), BASE_CONTENT_LENGTH)
         );
